@@ -1,0 +1,24 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: fund
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bishe
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    mode: HTML5
+mybatis:
+  type-aliases-package: com.zhy.fund.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.zhy.fund.dao: debug
