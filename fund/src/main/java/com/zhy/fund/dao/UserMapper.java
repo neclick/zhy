@@ -14,4 +14,8 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    public User userLogin(String userNo, String userPass);
+
+    int register(String userNo, String userTel, String userIdcard, String userPass);
 }

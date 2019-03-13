@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhy.fund.dao.AdminMapper" >
+  <resultMap id="BaseResultMap" type="com.zhy.fund.entity.Admin" >
+    <id column="admin_id" property="adminId" jdbcType="INTEGER" />
+    <result column="admin_nm" property="adminNm" jdbcType="VARCHAR" />
+    <result column="admin_no" property="adminNo" jdbcType="VARCHAR" />
+    <result column="admin_pass" property="adminPass" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    admin_id, admin_nm, admin_no, admin_pass
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhy.fund.entity.Admin" >
+    insert into admin (admin_id, admin_nm, admin_no, 
+      admin_pass)
+    values (#{adminId,jdbcType=INTEGER}, #{adminNm,jdbcType=VARCHAR}, #{adminNo,jdbcType=VARCHAR}, 
+      #{adminPass,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhy.fund.entity.Admin" >
+    insert into admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adminId != null" >
+        admin_id,
+      </if>
+      <if test="adminNm != null" >
+        admin_nm,
+      </if>
+      <if test="adminNo != null" >
+        admin_no,
+      </if>
+      <if test="adminPass != null" >
+        admin_pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adminId != null" >
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="adminNm != null" >
+        #{adminNm,jdbcType=VARCHAR},
+      </if>
+      <if test="adminNo != null" >
+        #{adminNo,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPass != null" >
+        #{adminPass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhy.fund.entity.Admin" >
+    update admin
+    <set >
+      <if test="adminNm != null" >
+        admin_nm = #{adminNm,jdbcType=VARCHAR},
+      </if>
+      <if test="adminNo != null" >
+        admin_no = #{adminNo,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPass != null" >
+        admin_pass = #{adminPass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhy.fund.entity.Admin" >
+    update admin
+    set admin_nm = #{adminNm,jdbcType=VARCHAR},
+      admin_no = #{adminNo,jdbcType=VARCHAR},
+      admin_pass = #{adminPass,jdbcType=VARCHAR}
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+
+  <select id="login" resultMap="BaseResultMap" parameterType="jcom.zhy.fund.entity.Admin" >
+    select
+    <include refid="Base_Column_List" />
+    from admin
+    where admin_nm=#{adminNm} and admin_no=#{adminNo} and admin_pass=#{adminPass}
+  </select>
+
+  <insert id="addAdmin" parameterType="com.zhy.fund.entity.Admin" >
+    insert into admin (admin_nm, admin_no,admin_pass)
+    values #{adminNm,jdbcType=VARCHAR}, #{adminNo,jdbcType=VARCHAR},#{adminPass,jdbcType=VARCHAR})
+  </insert>
+
+  <select id="findAllAdminInfo" resultMap="BaseResultMap" parameterType="jcom.zhy.fund.entity.Admin" >
+    select
+    <include refid="Base_Column_List" />
+    from admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </select>
+</mapper>
