@@ -39,7 +39,7 @@ public class JiJinUtil {
     }
 
     //2.股票型基金
-    public static void getRequest2(){
+    public static Object getRequest2(){
         String result =null;
         String url ="http://web.juhe.cn:8080/fund/netdata/stock";//请求接口地址
         Map params = new HashMap();//请求参数
@@ -50,16 +50,18 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+                return object.get("result");
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     //3.普通债券型基金
-    public static void getRequest3(){
+    public static Object getRequest3(){
         String result =null;
         String url ="http://web.juhe.cn:8080/fund/netdata/bond";//请求接口地址
         Map params = new HashMap();//请求参数
@@ -70,16 +72,18 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+                return object.get("result");
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     //4.货币型基金
-    public static void getRequest4(){
+    public static Object getRequest4(){
         String result =null;
         String url ="http://web.juhe.cn:8080/fund/netdata/monet";//请求接口地址
         Map params = new HashMap();//请求参数
@@ -90,12 +94,14 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+                return object.get("result");
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     //5.封闭型基金
@@ -130,6 +136,7 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
