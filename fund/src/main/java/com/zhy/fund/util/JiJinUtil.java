@@ -19,7 +19,7 @@ public class JiJinUtil {
     public static final String APPKEY ="cea8a3f441c798c058ac607352e66fec";
 
     //1.全部开放基金
-    public static void getRequest1(){
+    public static Object getRequest1(){
         String result =null;
         String url ="http://web.juhe.cn:8080/fund/netdata/all";//请求接口地址
         Map params = new HashMap();//请求参数
@@ -30,12 +30,14 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+                return object.get("result");
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     //2.股票型基金

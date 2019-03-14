@@ -422,6 +422,7 @@
 								<li role="presentation"><a href="#experts1" role="tab" id="experts1-tab" data-toggle="tab" aria-controls="experts1">涨幅/跌幅</a></li>
 								<li role="presentation"><a href="#read1" role="tab" id="read1-tab" data-toggle="tab" aria-controls="read1">世界</a></li>
 							</ul>
+							<!--市场推动下面的图-->
 							<div id="myTabContent1" class="tab-content">
 								<div role="tabpanel" class="tab-pane fade in active" id="home1" aria-labelledby="home1-tab">
 									<div class="w3_sensex">
@@ -444,6 +445,7 @@
 										<div class="clearfix"> </div>
 										<div id="chart3" style="width:360px;height:150px;padding:5px;"></div>
 									</div>
+									<!--图片下面DAX,CAC,FISE-->
 									<div class="w3_agile_all_trades">
 										<table class="w3_agile_all_trade w3_table_trade">
 											<tr>
@@ -468,10 +470,11 @@
 										<p class="agile_market_para"><a href="single.html">See all global markets</a> »</p>
 									</div>
 								</div>
+								<!--行业-->
 								<div role="tabpanel" class="tab-pane fade" id="latest1" aria-labelledby="latest1-tab">
 									<div class="agile_market_trade">
-										<table class="w3_agile_all_trade w3_table_trade">
-											<tr>
+										<table class="w3_agile_all_trade w3_table_trade" id="api_list">
+											<!--<tr>
 												<th>
 													<a href="single.html">
 														<span>S&amp;P BSE Auto</span>
@@ -605,10 +608,11 @@
 												</th>
 												<td class="agileits_w3layouts_td">15098.30</td>
 												<td class="agileits_w3layouts_td" style="color:#00AA00">114.40</td>
-											</tr>
+											</tr>-->
 										</table>
 									</div>
 								</div>
+								<!--涨幅跌幅-->
 								<div role="tabpanel" class="tab-pane fade" id="experts1" aria-labelledby="experts1-tab">
 									<div class="w3_agileits_gainers">
 										<ul>
@@ -715,6 +719,7 @@
 										</div>
 									</div>
 								</div>
+								<!--世界-->
 								<div role="tabpanel" class="tab-pane fade" id="read1" aria-labelledby="read1-tab">
 									<div class="wthree_asia_europe">
 										<h4><b>Asia</b></h4>
@@ -1549,7 +1554,30 @@ $(document).ready(function(){
 
 <!--add-->
 <script type="text/javascript">
-	
+    $(document).ready(function() {
+        function isIn(o) {
+            var n = 0;
+            for (var i in o) {
+                n++;
+            }
+            return n;
+        }
+        $.ajax({
+            type: 'get',
+            url: 'api_GuPiao',
+            dataType: 'json',
+            success: function (result) {
+                console.log(result[0].length)
+                var num = isIn(result[0]);
+                for (var i = 1; i <= 10; i++) {
+                    $("#api_list").after("<tr><th><a href=\"'psingle?name='+(result[0])[i].name\">" + (result[0])[i].name + "</a></th>"
+                        +"<td class=\"agileits_w3layouts_td\">"+(result[0])[i].totalnet+"</td>"
+                        +"<td class=\"agileits_w3layouts_td\">"+(result[0])[i].newnet+"</td>"
+                    );
+                }
+            }
+        })
+    });
 </script>
 </body>
 </html>
