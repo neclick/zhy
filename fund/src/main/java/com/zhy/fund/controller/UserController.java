@@ -1,6 +1,5 @@
 package com.zhy.fund.controller;
 
-import com.zhy.fund.dao.UserMapper;
 import com.zhy.fund.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

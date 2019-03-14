@@ -5,7 +5,7 @@ spring:
     name: fund
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bishe
+    url: jdbc:mysql://localhost:3306/bishe?serverTimezone=UTC
     username: root
     password: root
   thymeleaf:

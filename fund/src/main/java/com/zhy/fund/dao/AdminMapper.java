@@ -1,6 +1,7 @@
 package com.zhy.fund.dao;
 
 import com.zhy.fund.entity.Admin;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
 
@@ -17,7 +18,7 @@ public interface AdminMapper {
 
     int updateByPrimaryKey(Admin record);
 
-    public Admin login(String adminNm, String adminNo, String adminPass);
+    public Admin login(@Param("adminNm") String adminNm,@Param("adminNo") String adminNo,@Param("adminPass") String adminPass);
 
     int addAdmin(String adminNm, String adminNo, String adminPass);
 
