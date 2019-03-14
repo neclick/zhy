@@ -24,4 +24,12 @@ public class ApiController {
         System.out.println(obj.toString());
         return obj;
     }*/
+
+    @GetMapping("api_QuanBu")
+    @ResponseBody
+    public Object getQuanBu(Map<String,Object> map){
+        Object obj=JiJinUtil.getRequest1();
+        System.out.println(obj.toString());
+        return obj;
+    }
 }
