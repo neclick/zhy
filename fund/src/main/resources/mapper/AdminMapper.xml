@@ -80,7 +80,7 @@
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
 
-  <select id="login" resultMap="BaseResultMap" parameterType="jcom.zhy.fund.entity.Admin" >
+  <select id="login" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.Admin" >
     select
     <include refid="Base_Column_List" />
     from admin
@@ -92,7 +92,7 @@
     values #{adminNm,jdbcType=VARCHAR}, #{adminNo,jdbcType=VARCHAR},#{adminPass,jdbcType=VARCHAR})
   </insert>
 
-  <select id="findAllAdminInfo" resultMap="BaseResultMap" parameterType="jcom.zhy.fund.entity.Admin" >
+  <select id="findAllAdminInfo" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.Admin" >
     select
     <include refid="Base_Column_List" />
     from admin

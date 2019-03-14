@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Equity</title>
 	<!-- for-mobile-apps -->
@@ -333,148 +333,147 @@
 </div>
 <!-- //banner-bottom -->
 <!-- equity -->
-	<div class="equity">
-		<div class="container">
-			<div class="col-md-6 w3_equity_market_analysis">
-				<div class="w3_equity_market_analysis_grid">
-					<h3><i class="fa fa-external-link"></i>Market Analysis</h3>
-					<div class="w3_equity_market_analysis_grid_sub">
-						<h4>Volume Toppers</h4>
-						<div class="w3_agileits_gain_list">
-							<table class="w3_agile_all_trade w3_agile_all_trade_funds w3_table_trade">
-								<tr id="result_head">
-									<th class="w3_agileits_head"><b>名称</b></th>
-									<td class="w3_agileits_head1"><b>净值</b></td>
-									<td class="w3_agileits_head1"><b>最新净值</b></td>
-									<td class="w3_agileits_head1"><b>日增长率</b></td>
-									<td class="w3_agileits_head1"><b>月增长率</b></td>
-									<td class="w3_agileits_head1" style="color:#00AA00;"><b>年收益率</b></td>
-									<td class="w3_agileits_head1"></td>
-								</tr>
-								<!--<tr id="result_head">
-									<th class="w3_agile_th">
-										<a href="single.html"> </a>
-									</th>
-									<td class="agileits_w3layouts_td">(in Rs.)</td>
-									<td class="agileits_w3layouts_td">(in Rs.)</td>
-									<td class="agileits_w3layouts_td">(in Rs.)</td>
-									<td class="agileits_w3layouts_td">('000s)</td>
-									<td class="agileits_w3layouts_td">(%chg.)</td>
-									<td class="agileits_w3layouts_td"></td>
-								</tr>-->
-								<!--<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">RBL Bank</a>
-									</th>
-									<td class="agileits_w3layouts_td">305.50</td>
-									<td class="agileits_w3layouts_td">274.20</td>
-									<td class="agileits_w3layouts_td">225.20</td>
-									<td class="agileits_w3layouts_td">300.05</td>
-									<td class="agileits_w3layouts_td">66132.83</td>
-									<td class="agileits_w3layouts_td" style="color:#337ab7;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">JP Associate</a>
-									</th>
-									<td class="agileits_w3layouts_td">11.90</td>
-									<td class="agileits_w3layouts_td">11.25</td>
-									<td class="agileits_w3layouts_td">11.25</td>
-									<td class="agileits_w3layouts_td">11.70</td>
-									<td class="agileits_w3layouts_td">27937.45</td>
-									<td class="agileits_w3layouts_td" style="color:#337ab7;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Welspun India</a>
-									</th>
-									<td class="agileits_w3layouts_td">48.95</td>
-									<td class="agileits_w3layouts_td">46.80</td>
-									<td class="agileits_w3layouts_td">46.65</td>
-									<td class="agileits_w3layouts_td">48.30</td>
-									<td class="agileits_w3layouts_td">24421.51</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Reliance Comm.</a>
-									</th>
-									<td class="agileits_w3layouts_td">55.35</td>
-									<td class="agileits_w3layouts_td">53.45</td>
-									<td class="agileits_w3layouts_td">53.75</td>
-									<td class="agileits_w3layouts_td">54.80</td>
-									<td class="agileits_w3layouts_td">14585.16</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">HCC</a>
-									</th>
-									<td class="agileits_w3layouts_td">24.80</td>
-									<td class="agileits_w3layouts_td">24.00</td>
-									<td class="agileits_w3layouts_td">22.95</td>
-									<td class="agileits_w3layouts_td">24.70</td>
-									<td class="agileits_w3layouts_td">12974.14</td>
-									<td class="agileits_w3layouts_td" style="color:#337ab7;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Unitech</a>
-									</th>
-									<td class="agileits_w3layouts_td">5.35</td>
-									<td class="agileits_w3layouts_td">5.15</td>
-									<td class="agileits_w3layouts_td">5.20</td>
-									<td class="agileits_w3layouts_td">5.30</td>
-									<td class="agileits_w3layouts_td">9292.73</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Unitech</a>
-									</th>
-									<td class="agileits_w3layouts_td">5.35</td>
-									<td class="agileits_w3layouts_td">5.15</td>
-									<td class="agileits_w3layouts_td">5.20</td>
-									<td class="agileits_w3layouts_td">5.30</td>
-									<td class="agileits_w3layouts_td">9292.73</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Unitech</a>
-									</th>
-									<td class="agileits_w3layouts_td">5.35</td>
-									<td class="agileits_w3layouts_td">5.15</td>
-									<td class="agileits_w3layouts_td">5.20</td>
-									<td class="agileits_w3layouts_td">5.30</td>
-									<td class="agileits_w3layouts_td">9292.73</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Unitech</a>
-									</th>
-									<td class="agileits_w3layouts_td">5.35</td>
-									<td class="agileits_w3layouts_td">5.15</td>
-									<td class="agileits_w3layouts_td">5.20</td>
-									<td class="agileits_w3layouts_td">5.30</td>
-									<td class="agileits_w3layouts_td">9292.73</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>
-								<tr>
-									<th class="w3_agile_th">
-										<a href="single.html">Unitech</a>
-									</th>
-									<td class="agileits_w3layouts_td">5.35</td>
-									<td class="agileits_w3layouts_td">5.15</td>
-									<td class="agileits_w3layouts_td">5.20</td>
-									<td class="agileits_w3layouts_td">5.30</td>
-									<td class="agileits_w3layouts_td">9292.73</td>
-									<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
-								</tr>-->
-							</table>
-							<div style="padding-top:10px;font-size:13px;"><a href="single.html" style="color:#337ab7;">More »</a></div>
-						</div>
+<div class="equity">
+	<div class="container">
+		<div class="col-md-6 w3_equity_market_analysis">
+			<div class="w3_equity_market_analysis_grid">
+				<h3><i class="fa fa-external-link"></i>XXX型</h3>
+				<div class="w3_equity_market_analysis_grid_sub">
+					<h4>Volume Toppers</h4>
+					<div class="w3_agileits_gain_list">
+						<table class="w3_agile_all_trade w3_agile_all_trade_funds w3_table_trade">
+							<tr id="api_list">
+								<th class="w3_agileits_head"><b>名称</b></th>
+								<td class="w3_agileits_head1"><b>净值</b></td>
+								<td class="w3_agileits_head1"><b>最新净值</b></td>
+								<td class="w3_agileits_head1"><b>日增长率</b></td>
+								<td class="w3_agileits_head1"><b>月增长率</b></td>
+								<td class="w3_agileits_head1"><b>年收益率</b></td>
+								<td class="w3_agileits_head1"></td>
+							</tr>
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html"> </a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">(in Rs.)</td>-->
+								<!--<td class="agileits_w3layouts_td">(in Rs.)</td>-->
+								<!--<td class="agileits_w3layouts_td">(in Rs.)</td>-->
+								<!--<td class="agileits_w3layouts_td">('000s)</td>-->
+								<!--<td class="agileits_w3layouts_td">(%chg.)</td>-->
+								<!--<td class="agileits_w3layouts_td"></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">RBL Bank</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">305.50</td>-->
+								<!--<td class="agileits_w3layouts_td">274.20</td>-->
+								<!--<td class="agileits_w3layouts_td">225.20</td>-->
+								<!--<td class="agileits_w3layouts_td">300.05</td>-->
+								<!--<td class="agileits_w3layouts_td">66132.83</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#337ab7;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">JP Associate</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">11.90</td>-->
+								<!--<td class="agileits_w3layouts_td">11.25</td>-->
+								<!--<td class="agileits_w3layouts_td">11.25</td>-->
+								<!--<td class="agileits_w3layouts_td">11.70</td>-->
+								<!--<td class="agileits_w3layouts_td">27937.45</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#337ab7;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Welspun India</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">48.95</td>-->
+								<!--<td class="agileits_w3layouts_td">46.80</td>-->
+								<!--<td class="agileits_w3layouts_td">46.65</td>-->
+								<!--<td class="agileits_w3layouts_td">48.30</td>-->
+								<!--<td class="agileits_w3layouts_td">24421.51</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Reliance Comm.</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">55.35</td>-->
+								<!--<td class="agileits_w3layouts_td">53.45</td>-->
+								<!--<td class="agileits_w3layouts_td">53.75</td>-->
+								<!--<td class="agileits_w3layouts_td">54.80</td>-->
+								<!--<td class="agileits_w3layouts_td">14585.16</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">HCC</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">24.80</td>-->
+								<!--<td class="agileits_w3layouts_td">24.00</td>-->
+								<!--<td class="agileits_w3layouts_td">22.95</td>-->
+								<!--<td class="agileits_w3layouts_td">24.70</td>-->
+								<!--<td class="agileits_w3layouts_td">12974.14</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#337ab7;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Unitech</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">5.35</td>-->
+								<!--<td class="agileits_w3layouts_td">5.15</td>-->
+								<!--<td class="agileits_w3layouts_td">5.20</td>-->
+								<!--<td class="agileits_w3layouts_td">5.30</td>-->
+								<!--<td class="agileits_w3layouts_td">9292.73</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Unitech</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">5.35</td>-->
+								<!--<td class="agileits_w3layouts_td">5.15</td>-->
+								<!--<td class="agileits_w3layouts_td">5.20</td>-->
+								<!--<td class="agileits_w3layouts_td">5.30</td>-->
+								<!--<td class="agileits_w3layouts_td">9292.73</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Unitech</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">5.35</td>-->
+								<!--<td class="agileits_w3layouts_td">5.15</td>-->
+								<!--<td class="agileits_w3layouts_td">5.20</td>-->
+								<!--<td class="agileits_w3layouts_td">5.30</td>-->
+								<!--<td class="agileits_w3layouts_td">9292.73</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Unitech</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">5.35</td>-->
+								<!--<td class="agileits_w3layouts_td">5.15</td>-->
+								<!--<td class="agileits_w3layouts_td">5.20</td>-->
+								<!--<td class="agileits_w3layouts_td">5.30</td>-->
+								<!--<td class="agileits_w3layouts_td">9292.73</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+								<!--<th class="w3_agile_th">-->
+									<!--<a href="single.html">Unitech</a>-->
+								<!--</th>-->
+								<!--<td class="agileits_w3layouts_td">5.35</td>-->
+								<!--<td class="agileits_w3layouts_td">5.15</td>-->
+								<!--<td class="agileits_w3layouts_td">5.20</td>-->
+								<!--<td class="agileits_w3layouts_td">5.30</td>-->
+								<!--<td class="agileits_w3layouts_td">9292.73</td>-->
+								<!--<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>-->
+							<!--</tr>-->
+						</table>
+						<div style="padding-top:10px;font-size:13px;"><a href="single.html" style="color:#337ab7;">More »</a></div>
 					</div>
 				</div><br /><br />
 				<h3><i class="fa fa-external-link"></i>XXX型</h3>
@@ -896,6 +895,7 @@
 							<td class="agileits_w3layouts_td" style="color:#FF0000;"><a href="#">点击购买</a></td>
 						</tr>
 					</table>
+					<div style="padding-top:10px;font-size:13px;"><a href="single.html" style="color:#337ab7;">More »</a></div>
 				</div>
 			</div>
 		</div>
@@ -986,6 +986,7 @@
             easingType: 'linear'
             };
         */
+
         function isIn(o) {
             var n = 0;
             for (var i in o) {
@@ -1009,7 +1010,7 @@
                         +"<td>"+(result[0])[i].newnet+"</td>"
                         +"<td>"+(result[0])[i].daygrowrate+"</td>"
                         +"<td>"+(result[0])[i].dayincrease+"</td>"
-                        +"<td>"+(result[0])[i].weekgrowrate+"</td></tr>"
+                        +"<td>"+(result[0])[i].weekgrowrate+"</td><td class=\"agileits_w3layouts_td\" style=\"color:#FF0000;\"><a href=\"web?name=index\">点击购买</a></td></tr>"
                     );
                 }
             }
