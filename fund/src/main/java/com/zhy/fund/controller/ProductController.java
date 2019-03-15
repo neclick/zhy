@@ -27,7 +27,7 @@ public class ProductController {
         List<Product> plist=new ArrayList<Product>();
         plist.add(product);
         map.put("plist",plist);
-        if(productService.isContain(code)!=null) {
+        if(productService.isContain(code)==null) {
             if (productService.addProduct(product) > 0) {
                 return "details";
             }
