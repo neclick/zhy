@@ -13,11 +13,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User userLogin(String userNo, String userPass) {
+
         return userMapper.userLogin(userNo,userPass);
     }
 
     @Override
-    public int register(String userNo, String userTel, String userIdcard, String userPass) {
-        return userMapper.register(userNo,userTel,userIdcard,userPass);
+    public int register(String userNo,String userNm, String userTel, String userIdcard, String userPass) {
+        return userMapper.register(userNo,userNm,userTel,userIdcard,userPass);
     }
 }

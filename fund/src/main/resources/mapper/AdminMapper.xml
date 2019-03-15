@@ -88,14 +88,12 @@
   </select>
 
   <insert id="addAdmin" parameterType="com.zhy.fund.entity.Admin" >
-    insert into admin (admin_nm, admin_no,admin_pass)
-    values #{adminNm,jdbcType=VARCHAR}, #{adminNo,jdbcType=VARCHAR},#{adminPass,jdbcType=VARCHAR})
+    insert into admin values (#{adminNm}, #{adminNo},#{adminPass})
   </insert>
 
   <select id="findAllAdminInfo" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.Admin" >
     select
     <include refid="Base_Column_List" />
     from admin
-    where admin_id = #{adminId,jdbcType=INTEGER}
   </select>
 </mapper>

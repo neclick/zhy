@@ -1,6 +1,7 @@
 package com.zhy.fund.dao;
 
 import com.zhy.fund.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);
@@ -15,7 +16,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    public User userLogin(String userNo, String userPass);
+    public User userLogin(@Param("userNo") String userNo,@Param("userPass") String userPass);
 
-    int register(String userNo, String userTel, String userIdcard, String userPass);
+    int register(@Param("userNo") String userNo,@Param("userNm") String userNm,@Param("userTel") String userTel,@Param("userIdcard") String userIdcard,@Param("userPass") String userPass);
 }

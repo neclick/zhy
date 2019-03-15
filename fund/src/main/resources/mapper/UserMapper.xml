@@ -139,11 +139,11 @@
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
 
-  <select id="userLogin" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.User" >
+  <select id="userLogin" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from user
-    where user_nm=#{userNo} and user_pass=#{userPass}
+    where user_no=#{userNo} and user_pass=#{userPass}
   </select>
 
    <insert id="register" parameterType="com.zhy.fund.entity.User" >

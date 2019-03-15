@@ -26,8 +26,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public ArrayList<Admin> findAllUserinfo() {
-        return adminMapper.findAllUserinfo() ;
+    public ArrayList<Admin> findAllAdminInfo() {
+        return adminMapper.findAllAdminInfo() ;
     }
 
 }

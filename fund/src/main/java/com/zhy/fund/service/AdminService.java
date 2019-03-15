@@ -9,5 +9,5 @@ public interface AdminService {
 
     int addAdmin(String adminNm, String adminNo, String adminPass);
 
-    ArrayList<Admin> findAllUserinfo();
+    ArrayList<Admin> findAllAdminInfo();
 }

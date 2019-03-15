@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="common::header">
+<head>
 <title>About Us</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,6 +34,7 @@
 </head>
 	
 <body>
+<div th:include="common :: common-header"></div>
 <!-- banner-bottom -->
 	<div class="banner-bottom">
 		<div class="panel panel-default agile_panel">
@@ -224,28 +225,25 @@
 			<div class="agileinfo_news_original_grids w3_agile_news_market_grids">
 				<div class="col-md-9 w3ls_mutual_funds_grid1_jkjk">
 					<div class="agileits_about_grids w3ls_products_grid">
-						<h3>About Trade Market</h3>
+						<h3>关于我们</h3>
 						<div class="agileits_about_grid">
 							<div class="col-md-5 agileits_about_grid_left">	
 								<img src="images/35.jpg" alt=" " class="img-responsive" />
 							</div>
 							<div class="col-md-7 agileits_about_grid_right">
-								<p>Aliquam sed libero at mi bibendum pretium quis in lacus. Integer 
-									malesuada lectus eu orci pellentesque, a malesuada est tristique. 
-									Fusce porta pretium arcu vitae tincidunt. Vivamus rutrum ipsum id 
-									euismod iaculis. Etiam finibus purus quis est elementum, id congue 
-									urna faucibus. Suspendisse orci lectus, vehicula ullamcorper. <span>Suspendisse dictum sodales erat, 
-									eget pulvinar dolor. Aenean eu sapien ante. Pellentesque rutrum 
-									malesuada magna.</span></p>
+								<p style="font-size: 15px">lucky基金网成立于2019年2月11日，
+									位于福建省厦门市 美丽的集美大学诚毅学院，
+									lucky基金网上交易平台向投资者提供专业、
+									及时、全面的基金交易、资讯、 净值、数据、互动等全面的理财服务，
+									旨在把握市场热点, 帮助投资者把握投资机会,
+									相对精准地驾驭相应的投资主题。
+									致力于打造中国最专业的基金网上直销平台</span></p>
 							</div>
 							<div class="clearfix"> </div>
-							<p>Duis nec bibendum nunc. Nam blandit nibh a est finibus, et tincidunt nibh 
-								sollicitudin. Duis cursus ante sit amet libero varius, sit amet aliquet nibh 
-								fermentum.Nam consequat, libero at lobortis auctor, sapien neque auctor elit, at 
-								feugiat urna tortor sed ipsum.</p>
+							<p style="font-size: 20px">倾心打造网上平台,目前已有千家优质私募入驻,旨在帮助高净值客户实现高效投资,紧抓投资新风口,2019年的投资注定不凡!</p>
 						</div>
 						<div class="agileinfo_trade_team">
-							<h5><i class="fa fa-users" aria-hidden="true"></i>Board of Directors</h5>
+							<h5><i class="fa fa-users" aria-hidden="true"></i>我们的优势</h5>
 							<div class="col-md-3 agileinfo_trade_team_grid">
 								<div class="agileinfo_trade_team_grid1">
 									<div class="agile_chat_grid1">
@@ -259,8 +257,8 @@
 										</div>
 									</div>
 									<div class="agileinfo_trade_team_agile">
-										<h6>Mark Levis</h6>
-										<p>Chairman</p>
+										<h6>1)费率优惠：</h6>
+										<p>提供前端申购费率优惠，申购费率全面1折（个别基金除外）</p>
 									</div>
 								</div>
 							</div>
@@ -277,8 +275,8 @@
 										</div>
 									</div>
 									<div class="agileinfo_trade_team_agile">
-										<h6>Christiane</h6>
-										<p>CEO</p>
+										<h6>2)产品更全</h6>
+										<p>相对于基金公司，我们致力于打造基金超市，产品相对来说是比较全面</p>
 									</div>
 								</div>
 							</div>
@@ -295,8 +293,8 @@
 										</div>
 									</div>
 									<div class="agileinfo_trade_team_agile">
-										<h6>Anthony</h6>
-										<p>Managing Director</p>
+										<h6>3）快捷交易</h6>
+										<p>7*24小时，不受营业时间的限制，网络手机均支持交易</p>
 									</div>
 								</div>
 							</div>
@@ -313,8 +311,8 @@
 										</div>
 									</div>
 									<div class="agileinfo_trade_team_agile">
-										<h6>Bertram</h6>
-										<p>Public Interest Director</p>
+										<h6>4）贴心服务</h6>
+										<p>以客为尊，服务手段多样化；投资建议以客户需求为导向，个性化</p>
 									</div>
 								</div>
 							</div>
@@ -331,8 +329,8 @@
 										</div>
 									</div>
 									<div class="agileinfo_trade_team_agile">
-										<h6>Constantine</h6>
-										<p>Shareholder Director</p>
+										<h6>5）全面资讯</h6>
+										<p>延续多年资讯平台信息快全准的优势</p>
 									</div>
 								</div>
 							</div>
@@ -349,8 +347,8 @@
 										</div>
 									</div>
 									<div class="agileinfo_trade_team_agile">
-										<h6>Jefferson</h6>
-										<p>Shareholder Director</p>
+										<h6>6)专业投研</h6>
+										<p>坚持完全独立、客观研究分析</p>
 									</div>
 								</div>
 							</div>
@@ -467,47 +465,6 @@
 							<p>international markets</p>
 						</div>
 					</div>
-					<div class="w3layouts_newsletter">
-						<h3><i class="fa fa-envelope" aria-hidden="true"></i>Newsletter</h3>
-						<form action="#" method="post">
-							<input class="email" name="Email" type="email" placeholder="Email" required="">
-							<input type="submit" value="Send">
-						</form>
-						<p>Trade market offers you a choice of email alerts on your investments for FREE!</p>
-					</div>
-					<div class="w3_latest_stock">
-						<img src="images/19.jpg" alt=" " class="img-responsive" />
-						<div class="w3_latest_stock_pos">
-							<h3>latest <span>stock <i>market</i> updates</span></h3>
-						</div>
-					</div>
-					<div class="w3l_your_stocks">
-						<h3><i class="fa fa-stack-exchange" aria-hidden="true"></i>Your Stocks</h3>
-						<form action="#" method="post">
-							<span>
-								<label>Name</label>
-								<input type="text" name="Name" placeholder=" " required="">
-							</span>
-							<span>
-								<label>Mobile</label>
-								<input type="text" name="Mobile" placeholder=" " required="">
-							</span>
-							<span>
-								<label>Email</label>
-								<input type="email" name="Email" placeholder=" " required="">
-							</span>
-							<span>
-								<label>Location</label>
-								<input type="text" name="Location" placeholder=" " required="">
-							</span>
-							<span>
-								<label>Pin</label>
-								<input type="text" name="Pin" placeholder=" " required="">
-							</span>
-							<input type="submit" value="Submit Now">
-						</form>
-					</div>
-				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -520,7 +477,7 @@
 				<li><a href="index.html">Home</a><i>|</i></li>
 				<li><a href="news.html">Markets</a><i>|</i></li>
 				<li><a href="funds.html">mutual funds</a><i>|</i></li>
-				<li><a href="commodities.html">commodities</a><i>|</i></li>
+				<li><a href="new.html">commodities</a><i>|</i></li>
 				<li><a href="portfolio.html">portfolio</a><i>|</i></li>
 				<li><a href="about.html">About Us</a><i>|</i></li>
 				<li><a href="ipo.html">IPO</a><i>|</i></li>
