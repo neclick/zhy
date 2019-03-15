@@ -17,13 +17,29 @@ public class ApiController {
         return obj;
     }
 
-   /* @GetMapping("api_ZhaiQuan")
+   @GetMapping("api_ZhaiQuan")
     @ResponseBody
     public Object getZhaiQuan(Map<String,Object> map){
         Object obj=JiJinUtil.getRequest3();
         System.out.println(obj.toString());
         return obj;
-    }*/
+    }
+
+    @GetMapping("api_Close")
+    @ResponseBody
+    public Object getClose(Map<String,Object> map){
+        Object obj=JiJinUtil.getRequest5();
+        System.out.println(obj.toString());
+        return obj;
+    }
+
+    @GetMapping("api_Lof")
+    @ResponseBody
+    public Object getLof(Map<String,Object> map){
+        Object obj=JiJinUtil.getRequest7();
+        System.out.println(obj.toString());
+        return obj;
+    }
 
     @GetMapping("api_QuanBu")
     @ResponseBody

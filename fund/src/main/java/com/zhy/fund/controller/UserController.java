@@ -6,13 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Map;
+
 @Controller
 public class UserController {
     @Autowired
     UserService userService;
     @RequestMapping("userLogin")
-    public  String userLogin(@RequestParam("userNo") String userNo,@RequestParam("userPass") String userPass){
+    public  String userLogin(@RequestParam("userNo") String userNo, @RequestParam("userPass") String userPass){
         if(userService.userLogin(userNo, userPass)!=null){
+            /*map.put("userno",userNo);*/
             return "index";
         }else{
             return "index";

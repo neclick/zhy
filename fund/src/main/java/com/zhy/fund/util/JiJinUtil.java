@@ -107,7 +107,7 @@ public class JiJinUtil {
     }
 
     //5.封闭型基金
-    public static void getRequest5(){
+    public static Object getRequest5(){
         String result =null;
         String url ="http://web.juhe.cn:8080/fund/netdata/close";//请求接口地址
         Map params = new HashMap();//请求参数
@@ -118,12 +118,14 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+                return object.get("result");
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     //6.创新封基
@@ -148,7 +150,7 @@ public class JiJinUtil {
     }
 
     //7.LOF
-    public static void getRequest7(){
+    public static Object getRequest7(){
         String result =null;
         String url ="http://web.juhe.cn:8080/fund/netdata/lof";//请求接口地址
         Map params = new HashMap();//请求参数
@@ -159,12 +161,14 @@ public class JiJinUtil {
             JSONObject object = JSONObject.fromObject(result);
             if(object.getInt("error_code")==0){
                 System.out.println(object.get("result"));
+                return object.get("result");
             }else{
                 System.out.println(object.get("error_code")+":"+object.get("reason"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     //8.ETF
