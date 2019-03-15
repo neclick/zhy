@@ -1,5 +1,6 @@
 package com.zhy.fund.controller;
 
+import com.zhy.fund.entity.User;
 import com.zhy.fund.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -29,6 +32,12 @@ public class UserController {
             return "index";
         }
     }
-
+    @RequestMapping("userDetail")
+    public String findAllUserInfo(Map<String,Object> map){
+        List<User> uslist=userService.findAllUserInfo();
+        System.out.println(uslist);
+        map.put("uslist",uslist);
+        return "admin/user-basic";
+    }
 
 }

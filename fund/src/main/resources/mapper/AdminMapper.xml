@@ -88,7 +88,8 @@
   </select>
 
   <insert id="addAdmin" parameterType="com.zhy.fund.entity.Admin" >
-    insert into admin values (#{adminNm}, #{adminNo},#{adminPass})
+    insert into admin (admin_nm, admin_no,admin_pass)
+    values (#{adminNm,jdbcType=VARCHAR}, #{adminNo,jdbcType=VARCHAR}, #{adminPass,jdbcType=VARCHAR})
   </insert>
 
   <select id="findAllAdminInfo" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.Admin" >
@@ -96,4 +97,11 @@
     <include refid="Base_Column_List" />
     from admin
   </select>
+
+  <delete id="delAdminInfo" parameterType="java.lang.Integer" >
+    delete from admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </delete>
+
+
 </mapper>

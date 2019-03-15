@@ -20,7 +20,9 @@ public interface AdminMapper {
 
     public Admin login(@Param("adminNm") String adminNm,@Param("adminNo") String adminNo,@Param("adminPass") String adminPass);
 
-    int addAdmin(String adminNm, String adminNo, String adminPass);
+    int addAdmin(@Param("adminNm") String adminNm,@Param("adminNo") String adminNo,@Param("adminPass") String adminPass);
 
     ArrayList<Admin> findAllAdminInfo();
+
+    public int delAdminInfo(@Param("adminId") Integer adminId);
 }

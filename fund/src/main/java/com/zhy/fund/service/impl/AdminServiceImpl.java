@@ -27,7 +27,14 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public ArrayList<Admin> findAllAdminInfo() {
+
         return adminMapper.findAllAdminInfo() ;
+    }
+
+    @Override
+    public int delAdminInfo(Integer adminId) {
+
+        return adminMapper.delAdminInfo(adminId);
     }
 
 }

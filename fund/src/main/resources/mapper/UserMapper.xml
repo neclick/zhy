@@ -152,4 +152,10 @@
     values (#{userNm,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR}, #{userIdcard,jdbcType=VARCHAR},
       #{userNo,jdbcType=VARCHAR}, #{userPass,jdbcType=VARCHAR} )
    </insert>
+
+  <select id="findAllUserInfo" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.User" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+  </select>
 </mapper>

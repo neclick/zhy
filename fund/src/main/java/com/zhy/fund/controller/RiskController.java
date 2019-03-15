@@ -19,5 +19,6 @@ public class RiskController {
             map.put("riskInfoList",riskInfoList);
             return "admin/risk-topic";
         }
+
     }
 

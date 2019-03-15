@@ -6,6 +6,8 @@ import com.zhy.fund.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -20,5 +22,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public int register(String userNo,String userNm, String userTel, String userIdcard, String userPass) {
         return userMapper.register(userNo,userNm,userTel,userIdcard,userPass);
+    }
+
+    @Override
+    public ArrayList<User> findAllUserInfo() {
+        return userMapper.findAllUserInfo();
     }
 }

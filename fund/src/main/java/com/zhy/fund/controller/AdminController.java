@@ -23,14 +23,6 @@ public class AdminController {
             return "admin/page-login";
         }
     }
-    @RequestMapping("addAdmin")
-    public String addAdmin(String adminNm, String adminNo, String adminPass){
-        if(adminService.addAdmin(adminNm, adminNo, adminPass)>0){
-            return "findAllAdminInfo";
-        }else{
-            return "admin/page-admin";
-        }
-    }
     @RequestMapping("adminDetail")
     public String findAllAdminInfo(Map<String,Object> map){
         List<Admin> adlist=adminService.findAllAdminInfo();
@@ -38,9 +30,28 @@ public class AdminController {
         map.put("adlist",adlist);
         return "admin/page-admin";
     }
+    @RequestMapping("addAdmin")
+    public String addAdmin(@RequestParam("adminNm") String adminNm,@RequestParam("adminNo") String adminNo,@RequestParam("adminPass") String adminPass){
+        if(adminService.addAdmin(adminNm, adminNo, adminPass)>0){
+            return "forward:adminDetail";
+        }else{
+            return "forward:adminDetail";
+        }
+    }
+    @RequestMapping("delAdminInfo")
+    public String delUserinfo(@RequestParam("adminId") String adminId) {
 
+        int adId=Integer.parseInt(adminId);
+        System.out.println(adminId);
+        if (adminService.delAdminInfo(adId) > 0) {
+            return "forward:adminDetail";
+        } else {
+            return "forward:adminDetail";
+        }
+    }
     @RequestMapping("adlogin")
     public String adlogin(){
+
         return "admin/page-login";
     }
 

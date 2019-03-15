@@ -227,37 +227,35 @@
 				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					<p class="active" style="font-size:20px ;">单位净值</p>
 					<p class="time"><span style="color: red;">2019-03-10</span></p>
-					<div class="net" style="font-size: 50px;color: #C7254E;"><strong>12.88</strong></div>
-					<div class="product-no-type"><span style="color: #6F6F6F;">126799</span>&nbsp;&nbsp;<span style="color: #6F6F6F;">股票型</span></div>
+					<div class="net" style="font-size: 50px;color: #C7254E;"><strong>[[${plist[0].TatalNet}]]</strong></div>
+					<div class="product-no-type"><span style="color: #6F6F6F;">[[${plist[0].FundCode}]]</span>&nbsp;&nbsp;<span style="color: #6F6F6F;">股票型</span></div>
 				</div>
 			</div>
 			<div class="product-centre" style="float:left;margin-top:180px;margin-left: 150px;">
 				<table class="products-details">
 				    <tr height="50px">
 						<div class="weekGrowRate">
-							<span style="color: #6F6F6F;">近1周：</span>
-							<span style="color:red;">27.98</span>
-							<span style="color:red ;">%</span>
+							<span style="color: #6F6F6F;">最新净值：</span>
+							<span style="color:red;">[[${plist[0].NewNet}]]</span>
 					   </div>
 					</tr>
 				    <tr height="50px">
 						<div class="weekGrowRate">
-							<span style="color: #6F6F6F;">近1个月：</span>
-							<span style="color:red;">27.98</span>
-							<span style="color:red ;">%</span>
+							<span style="color: #6F6F6F;">净值：</span>
+							<span style="color:red;">[[${plist[0].TatalNet}]]</span>
 					   </div>
 					</tr>
 				    <tr height="50px">
 						<div class="weekGrowRate">
-							<span style="color: #6F6F6F;">近3个月：</span>
-							<span style="color:red;">27.98</span>
+							<span style="color: #6F6F6F;">日增长率：</span>
+							<span style="color:red;">[[${plist[0].DayGrowRate}]]</span>
 							<span style="color:red ;">%</span>
 					   </div>
 					</tr>
 				</table>
 			</div>
-			<div class="product-right" style="float:left;margin-top:120px;margin-left: 150px;">
-				<h5>哔哩吧啦基金销售公司提供</h5><br /><br />
+			<div class="product-right" style="float:left;margin-top:110px;margin-left: 150px;">
+				<h4>哔哩吧啦基金销售公司提供</h4><br /><br />
 				<table class="products-details">
 				    <tr height="50px">
 						<div class="weekGrowRate">
@@ -282,7 +280,7 @@
 			<div class="buy-window" style="float:left;margin-left: 400px;margin-top: -100px;">
 				<div id="">				
 				    <input class="form-group" style="height: 35px;width: 250px;" placeholder="                 元"/><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
-				     style="background-color: red;height: 37px;width: 160px;margin-top: -3px;text-align: center;">立即申购</button>	
+				     style="background-color: darkred;height: 37px;width: 160px;margin-top: -3px;text-align: center;">立即申购</button>
 			    </div>
 			    <div class="warnings">
 				            费率 <span style="color: red;"> 0.12%</span> ，申购成功即扣除 
