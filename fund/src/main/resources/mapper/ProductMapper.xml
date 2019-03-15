@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhy.fund.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.zhy.fund.entity.Product" >
+    <id column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="fund_code" property="fundCode" jdbcType="VARCHAR" />
+    <result column="product_nm" property="productNm" jdbcType="VARCHAR" />
+    <result column="product_type" property="productType" jdbcType="VARCHAR" />
+    <result column="product_incom" property="productIncom" jdbcType="DOUBLE" />
+    <result column="product_rate" property="productRate" jdbcType="DOUBLE" />
+    <result column="product_dt" property="productDt" jdbcType="DATE" />
+    <result column="fund_manager" property="fundManager" jdbcType="VARCHAR" />
+    <result column="creat_dt" property="creatDt" jdbcType="VARCHAR" />
+    <result column="total_share" property="totalShare" jdbcType="VARCHAR" />
+    <result column="circulat_share" property="circulatShare" jdbcType="VARCHAR" />
+    <result column="final_price" property="finalPrice" jdbcType="DOUBLE" />
+    <result column="time" property="time" jdbcType="DATE" />
+    <result column="day_grow_rate" property="dayGrowRate" jdbcType="DOUBLE" />
+    <result column="week_grow_rate" property="weekGrowRate" jdbcType="DOUBLE" />
+    <result column="month_grow_rate" property="monthGrowRate" jdbcType="DOUBLE" />
+    <result column="tatal_net" property="tatalNet" jdbcType="DOUBLE" />
+    <result column="new_net" property="newNet" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    product_id, fund_code, product_nm, product_type, product_incom, product_rate, product_dt, 
+    fund_manager, creat_dt, total_share, circulat_share, final_price, time, day_grow_rate, 
+    week_grow_rate, month_grow_rate, tatal_net, new_net
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from product
+    where product_id = #{productId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from product
+    where product_id = #{productId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhy.fund.entity.Product" >
+    insert into product (product_id, fund_code, product_nm, 
+      product_type, product_incom, product_rate, 
+      product_dt, fund_manager, creat_dt, 
+      total_share, circulat_share, final_price, 
+      time, day_grow_rate, week_grow_rate, 
+      month_grow_rate, tatal_net, new_net
+      )
+    values (#{productId,jdbcType=INTEGER}, #{fundCode,jdbcType=VARCHAR}, #{productNm,jdbcType=VARCHAR}, 
+      #{productType,jdbcType=VARCHAR}, #{productIncom,jdbcType=DOUBLE}, #{productRate,jdbcType=DOUBLE}, 
+      #{productDt,jdbcType=DATE}, #{fundManager,jdbcType=VARCHAR}, #{creatDt,jdbcType=VARCHAR}, 
+      #{totalShare,jdbcType=VARCHAR}, #{circulatShare,jdbcType=VARCHAR}, #{finalPrice,jdbcType=DOUBLE}, 
+      #{time,jdbcType=DATE}, #{dayGrowRate,jdbcType=DOUBLE}, #{weekGrowRate,jdbcType=DOUBLE}, 
+      #{monthGrowRate,jdbcType=DOUBLE}, #{tatalNet,jdbcType=DOUBLE}, #{newNet,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhy.fund.entity.Product" >
+    insert into product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="fundCode != null" >
+        fund_code,
+      </if>
+      <if test="productNm != null" >
+        product_nm,
+      </if>
+      <if test="productType != null" >
+        product_type,
+      </if>
+      <if test="productIncom != null" >
+        product_incom,
+      </if>
+      <if test="productRate != null" >
+        product_rate,
+      </if>
+      <if test="productDt != null" >
+        product_dt,
+      </if>
+      <if test="fundManager != null" >
+        fund_manager,
+      </if>
+      <if test="creatDt != null" >
+        creat_dt,
+      </if>
+      <if test="totalShare != null" >
+        total_share,
+      </if>
+      <if test="circulatShare != null" >
+        circulat_share,
+      </if>
+      <if test="finalPrice != null" >
+        final_price,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="dayGrowRate != null" >
+        day_grow_rate,
+      </if>
+      <if test="weekGrowRate != null" >
+        week_grow_rate,
+      </if>
+      <if test="monthGrowRate != null" >
+        month_grow_rate,
+      </if>
+      <if test="tatalNet != null" >
+        tatal_net,
+      </if>
+      <if test="newNet != null" >
+        new_net,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="fundCode != null" >
+        #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productNm != null" >
+        #{productNm,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null" >
+        #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productIncom != null" >
+        #{productIncom,jdbcType=DOUBLE},
+      </if>
+      <if test="productRate != null" >
+        #{productRate,jdbcType=DOUBLE},
+      </if>
+      <if test="productDt != null" >
+        #{productDt,jdbcType=DATE},
+      </if>
+      <if test="fundManager != null" >
+        #{fundManager,jdbcType=VARCHAR},
+      </if>
+      <if test="creatDt != null" >
+        #{creatDt,jdbcType=VARCHAR},
+      </if>
+      <if test="totalShare != null" >
+        #{totalShare,jdbcType=VARCHAR},
+      </if>
+      <if test="circulatShare != null" >
+        #{circulatShare,jdbcType=VARCHAR},
+      </if>
+      <if test="finalPrice != null" >
+        #{finalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=DATE},
+      </if>
+      <if test="dayGrowRate != null" >
+        #{dayGrowRate,jdbcType=DOUBLE},
+      </if>
+      <if test="weekGrowRate != null" >
+        #{weekGrowRate,jdbcType=DOUBLE},
+      </if>
+      <if test="monthGrowRate != null" >
+        #{monthGrowRate,jdbcType=DOUBLE},
+      </if>
+      <if test="tatalNet != null" >
+        #{tatalNet,jdbcType=DOUBLE},
+      </if>
+      <if test="newNet != null" >
+        #{newNet,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhy.fund.entity.Product" >
+    update product
+    <set >
+      <if test="fundCode != null" >
+        fund_code = #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productNm != null" >
+        product_nm = #{productNm,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null" >
+        product_type = #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productIncom != null" >
+        product_incom = #{productIncom,jdbcType=DOUBLE},
+      </if>
+      <if test="productRate != null" >
+        product_rate = #{productRate,jdbcType=DOUBLE},
+      </if>
+      <if test="productDt != null" >
+        product_dt = #{productDt,jdbcType=DATE},
+      </if>
+      <if test="fundManager != null" >
+        fund_manager = #{fundManager,jdbcType=VARCHAR},
+      </if>
+      <if test="creatDt != null" >
+        creat_dt = #{creatDt,jdbcType=VARCHAR},
+      </if>
+      <if test="totalShare != null" >
+        total_share = #{totalShare,jdbcType=VARCHAR},
+      </if>
+      <if test="circulatShare != null" >
+        circulat_share = #{circulatShare,jdbcType=VARCHAR},
+      </if>
+      <if test="finalPrice != null" >
+        final_price = #{finalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=DATE},
+      </if>
+      <if test="dayGrowRate != null" >
+        day_grow_rate = #{dayGrowRate,jdbcType=DOUBLE},
+      </if>
+      <if test="weekGrowRate != null" >
+        week_grow_rate = #{weekGrowRate,jdbcType=DOUBLE},
+      </if>
+      <if test="monthGrowRate != null" >
+        month_grow_rate = #{monthGrowRate,jdbcType=DOUBLE},
+      </if>
+      <if test="tatalNet != null" >
+        tatal_net = #{tatalNet,jdbcType=DOUBLE},
+      </if>
+      <if test="newNet != null" >
+        new_net = #{newNet,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where product_id = #{productId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhy.fund.entity.Product" >
+    update product
+    set fund_code = #{fundCode,jdbcType=VARCHAR},
+      product_nm = #{productNm,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=VARCHAR},
+      product_incom = #{productIncom,jdbcType=DOUBLE},
+      product_rate = #{productRate,jdbcType=DOUBLE},
+      product_dt = #{productDt,jdbcType=DATE},
+      fund_manager = #{fundManager,jdbcType=VARCHAR},
+      creat_dt = #{creatDt,jdbcType=VARCHAR},
+      total_share = #{totalShare,jdbcType=VARCHAR},
+      circulat_share = #{circulatShare,jdbcType=VARCHAR},
+      final_price = #{finalPrice,jdbcType=DOUBLE},
+      time = #{time,jdbcType=DATE},
+      day_grow_rate = #{dayGrowRate,jdbcType=DOUBLE},
+      week_grow_rate = #{weekGrowRate,jdbcType=DOUBLE},
+      month_grow_rate = #{monthGrowRate,jdbcType=DOUBLE},
+      tatal_net = #{tatalNet,jdbcType=DOUBLE},
+      new_net = #{newNet,jdbcType=DOUBLE}
+    where product_id = #{productId,jdbcType=INTEGER}
+  </update>
+
+
+  <insert id="addProduct" parameterType="com.zhy.fund.entity.Product" >
+    insert into product (product_id, fund_code, product_nm,
+      product_type, product_incom, product_rate,
+      product_dt, fund_manager, creat_dt,
+      total_share, circulat_share, final_price,
+      time, day_grow_rate, week_grow_rate,
+      month_grow_rate, tatal_net, new_net
+      )
+    values (#{productId,jdbcType=INTEGER}, #{fundCode,jdbcType=VARCHAR}, #{productNm,jdbcType=VARCHAR},
+      #{productType,jdbcType=VARCHAR}, #{productIncom,jdbcType=DOUBLE}, #{productRate,jdbcType=DOUBLE},
+      #{productDt,jdbcType=DATE}, #{fundManager,jdbcType=VARCHAR}, #{creatDt,jdbcType=VARCHAR},
+      #{totalShare,jdbcType=VARCHAR}, #{circulatShare,jdbcType=VARCHAR}, #{finalPrice,jdbcType=DOUBLE},
+      #{time,jdbcType=DATE}, #{dayGrowRate,jdbcType=DOUBLE}, #{weekGrowRate,jdbcType=DOUBLE},
+      #{monthGrowRate,jdbcType=DOUBLE}, #{tatalNet,jdbcType=DOUBLE}, #{newNet,jdbcType=DOUBLE}
+      )
+  </insert>
+  
+
+  <select id="isContain" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from product
+    where fund_code = #{code,jdbcType=VARCHAR}
+  </select>
+</mapper>
