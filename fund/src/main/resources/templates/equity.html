@@ -398,8 +398,8 @@
 							<td class="w3_agileits_head1"><b>基金代码</b></td>
 							<td class="w3_agileits_head1"><b>净值</b></td>
 							<td class="w3_agileits_head1"><b>最新净值</b></td>
-							<td class="w3_agileits_head1"><b>日增长率</b></td>
-							<td class="w3_agileits_head1"><b>日增长量</b></td>
+							<td class="w3_agileits_head1"><b>涨跌</b></td>
+							<td class="w3_agileits_head1"><b>折价率</b></td>
 							<td class="w3_agileits_head1"></td>
 						</tr>
 						<!--<tr>
@@ -711,10 +711,10 @@
                     $("#api_list3").after("<tr><th>" + (result[0])[i].name + "</th>"
                         +"<td>"+(result[0])[i].code+"</td>"
                         +"<td>"+(result[0])[i].totalnet+"</td>"
-                        +"<td>"+(result[0])[i].newnet+"</td>"
-                        +"<td>"+(result[0])[i].daygrowrate+"</td>"
-                        +"<td>"+(result[0])[i].dayincrease+"</td><td class=\"agileits_w3layouts_td\" style=\"color:#FF0000;\">" +
-                        "<a href='psingle?name="+(result[0])[i].name+"&totalnet="+(result[0])[i].totalnet+"&code="+(result[0])[i].code+"&newnet="+(result[0])[i].newnet+"&daygrowrate="+(result[0])[i].daygrowrate+"&dayincrease="+(result[0])[i].dayincrease+"'>点击购买</a></td></tr>"
+                        +"<td>"+(result[0])[i].net+"</td>"
+                        +"<td>"+(result[0])[i].price+"</td>"
+                        +"<td>"+(result[0])[i].disrate+"</td><td class=\"agileits_w3layouts_td\" style=\"color:#FF0000;\">" +
+                        "<a href='psingle?name="+(result[0])[i].name+"&totalnet="+(result[0])[i].totalnet+"&code="+(result[0])[i].code+"&newnet="+(result[0])[i].net+"&daygrowrate="+(result[0])[i].price+"&dayincrease="+(result[0])[i].disrate+"'>点击购买</a></td></tr>"
                     );
                 }
             }
