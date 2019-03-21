@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,9 +24,13 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.html">
-                        <img class="align-content" src="" alt="">
+                    <a href="#">
+                        <img class="align-content" src="images/logo.png" alt="">
                     </a>
+                    <a th:href="@{http://localhost:8100/web(name=index)}">
+                        <span style="color:lightseagreen;font-size: x-large">返回首页</span>
+                    </a>
+
                 </div>
                 <div class="login-form">
                     <form action="login" method="post">

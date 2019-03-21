@@ -17,7 +17,7 @@ public class RiskController {
         public String findAllRiskInfo(Map<String,Object> map){
             List<RiskInfo> riskInfoList=riskService.findAllRiskInfo();
             map.put("riskInfoList",riskInfoList);
-            return "admin/risk-topic";
+            return "risk";
         }
 
     }

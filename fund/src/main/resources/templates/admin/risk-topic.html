@@ -163,9 +163,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="risk:${riskInfoList}">
-                                            <td th:each="${risk.riskId}">1</td>
-                                            <td th:text="${risk.riskTopic}">你是否有足够的收入应付家庭日常开支？</td>
+                                        <tr th:each="ri:${riskInfoList}">
+                                            <td th:each="${ri.riskId}">1</td>
+                                            <td th:text="${ri.riskTopic}">你是否有足够的收入应付家庭日常开支？</td>
                                             <td><a href="" style="color: red;">删除</a></td>
                                         </tr>
                                         <tr>

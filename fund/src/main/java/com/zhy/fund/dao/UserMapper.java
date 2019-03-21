@@ -14,6 +14,8 @@ public interface UserMapper {
 
     User selectByPrimaryKey(Integer userId);
 
+    User selectByNo(String userNo);
+
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
@@ -23,4 +25,6 @@ public interface UserMapper {
     int register(@Param("userNo") String userNo,@Param("userNm") String userNm,@Param("userTel") String userTel,@Param("userIdcard") String userIdcard,@Param("userPass") String userPass);
 
     ArrayList<User> findAllUserInfo();
+
+    User findUserInfo(@Param("userId") Integer userId);
 }

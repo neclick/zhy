@@ -240,57 +240,49 @@
 						</div>
 						<div class="w3layouts_commodity_news_grid">
 							<div class="w3layouts_commodity_news_grid_left">
-								<a href="single.html">Gold slips on steady dollar with Fed rate hike in focus</a>
-								<p>The case for raising US interest rates has strengthened in recent months due to improvements in the labour market, Fed Chair Janet Yellen said on Friday.</p>
+								<a id="tit11" href="#"></a>
+								<p id="text"></p>
 							</div>
 							<div class="w3layouts_commodity_news_grid_right">
 								<img src="images/36.jpg" alt=" " class="img-responsive" />
 							</div>
 							<div class="clearfix"> </div>
-							<p class="agileits_w3layouts_para">August 31, 2016</p>
+							<p id="text11" class="agileits_w3layouts_para"></p>
 						</div>
 						<div class="w3layouts_commodity_news_grid w3layouts_commodity_news_grid1">
 							<div class="w3layouts_commodity_news_grid_left">
-								<a href="single.html">Crude oil at 7-month high; racing towards US$ 50 a bbl</a>
-								<p>The global oil supply is expected to cut by nearly 
-									4 million barrels per day this month. Data shows that US crude ...</p>
+								<a id="tit12" href="#"></a>
+								<p id="text01"></p>
 							</div>
 							<div class="w3layouts_commodity_news_grid_right">
 								<img src="images/38.jpg" alt=" " class="img-responsive" />
 							</div>
 							<div class="clearfix"> </div>
-							<p class="agileits_w3layouts_para">August 30, 2016</p>
+							<p id="text12" class="agileits_w3layouts_para"></p>
 						</div>
 						<div class="w3layouts_commodity_news_grid">
 							<div class="w3layouts_commodity_news_grid_left">
-								<a href="single.html">Offsetting currency fluctuation risk! S&amp;P BSE Gold Hedged Indices launched</a>
-								<p>The S&amp;P BSE SENSEX Gold Hedge is calculated as a combination of a long S&amp;P BSE SENSEX total return positio...</p>
+								<a href="#" id="tit13"></a>
+								<p id="text03"></p>
 							</div>
 							<div class="w3layouts_commodity_news_grid_right">
 								<img src="images/37.jpg" alt=" " class="img-responsive" />
 							</div>
 							<div class="clearfix"> </div>
-							<p class="agileits_w3layouts_para">August 28, 2016</p>
+							<p class="agileits_w3layouts_para" id="text13"></p>
 						</div>
 						<div class="w3layouts_commodity_news_grid w3layouts_commodity_news_grid_gas">
 							<div class="w3layouts_commodity_news_grid_left">
-								<a href="single.html">Natural gas extends win streak; oil futures bounce</a>
-								<p>Natural-gas futures score their ninth gain in 10 sessions, 
-									while oil prices recoup some of the previous session’s hefty 
-									losses.</p>
+								<a href="#" id="tit14"></a>
+								<p id="text05"></p>
 							</div>
 							<div class="w3layouts_commodity_news_grid_right">
 								<img src="images/40.jpg" alt=" " class="img-responsive" />
 							</div>
 							<div class="clearfix"> </div>
-							<p class="agileits_w3layouts_para">August 28, 2016</p>
+							<p class="agileits_w3layouts_para" id="text14"></p>
 						</div>
-						<div class="w3_commodity_prices">
-							<h3><i class="fa fa-hand-o-right" aria-hidden="true"></i></h3>
-							<div class="agileinfo_fund_offers_table">
 
-							</div>
-						</div>
 					</div>
 					<div class="col-md-5 w3_agile_news_market_left">
 						<div class="w3l_commodity_top_news">
@@ -306,9 +298,9 @@
 							</div>
 						</div>
 						<div class="w3layouts_commodity_news_grid_sub">
-							<a href="single.html">Gold steady above 4-week lows as dollar slips ahead of Yellen speech</a>
+							<a href="#" id="tit15"></a>
 							<img src="images/39.jpg" alt=" " class="img-responsive" />
-							<p>"Gold prices are in the sidelines, waiting for clues from Yellen's speech," said Helen Lau, an analyst with Argonaut Securities in Hong Kong.</p>
+							<p id="text07"></p>
 						</div>
 						<div class="agileits_commodity_statistics">
 							<h3><i class="fa fa-building-o" aria-hidden="true"></i>Commodity Statistics</h3>
@@ -517,7 +509,6 @@
 				<li><a href="ipo.html">IPO</a><i>|</i></li>
 				<li><a href="sitemap.html">sitemap</a></li>
 			</ul>
-			<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
 		</div>
 	</div>
 <!-- //footer -->
@@ -615,6 +606,30 @@ $(document).ready(function(){
                 $("#titl8").html((data.showapi_res_body.pagebean.contentlist)[5].title);
                 $("#titl9").html((data.showapi_res_body.pagebean.contentlist)[2].title);
                 $("#titl0").html((data.showapi_res_body.pagebean.contentlist)[3].title);
+
+                $("#tit11").html((data.showapi_res_body.pagebean.contentlist)[1].title);
+                $("#text11").html((data.showapi_res_body.pagebean.contentlist)[1].pubDate);
+                $("#text").html((data.showapi_res_body.pagebean.contentlist)[1].desc);
+                $("#text2").html((data.showapi_res_body.pagebean.contentlist)[1].allList);
+
+                $("#tit12").html((data.showapi_res_body.pagebean.contentlist)[2].title);
+                $("#text12").html((data.showapi_res_body.pagebean.contentlist)[2].pubDate);
+                $("#text01").html((data.showapi_res_body.pagebean.contentlist)[2].desc);
+                $("#text02").html((data.showapi_res_body.pagebean.contentlist)[2].allList);
+
+                $("#tit13").html((data.showapi_res_body.pagebean.contentlist)[3].title);
+                $("#text13").html((data.showapi_res_body.pagebean.contentlist)[3].pubDate);
+                $("#text03").html((data.showapi_res_body.pagebean.contentlist)[3].desc);
+                $("#text04").html((data.showapi_res_body.pagebean.contentlist)[3].allList);
+
+                $("#tit14").html((data.showapi_res_body.pagebean.contentlist)[4].title);
+                $("#text14").html((data.showapi_res_body.pagebean.contentlist)[4].pubDate);
+                $("#text05").html((data.showapi_res_body.pagebean.contentlist)[4].desc);
+                $("#text06").html((data.showapi_res_body.pagebean.contentlist)[4].allList);
+
+                $("#tit15").html((data.showapi_res_body.pagebean.contentlist)[5].title);
+                $("#text15").html((data.showapi_res_body.pagebean.contentlist)[5].pubDate);
+                $("#text07").html((data.showapi_res_body.pagebean.contentlist)[5].desc);
             },
             error:function(XmlHttpRequest,textStatus,errorThrown){
                 console.log(data.error_code);

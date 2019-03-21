@@ -221,22 +221,22 @@
 <!-- faq -->
 <div class="faq">
 	<div class="container01" >
-		<h3 class="typo_w3_agile_head">FAQ</h3>
-		<div class="w3l_faq_grids">
-			<div class="w3l_faq_grid">
-				<h4>1. Maecenas consequat libero eu eleifend placerat ?</h4>
-				<p>Cras orci ex, porta et dui vitae, gravida sagittis ligula.
-					Phasellus ullamcorper quam nisi. Quisque ipsum neque, fringilla
-					at sagittis sit amet, egestas et tellus. Pellentesque lacinia
-					facilisis massa quis semper.</p>
-			</div>
-			<div class="w3l_faq_grid">
-				<h4>2. Phasellus ullamcorper quam nisi placerat ?</h4>
-				<p>Cras orci ex, porta et dui vitae, gravida sagittis ligula.
-					Phasellus ullamcorper quam nisi. Quisque ipsum neque, fringilla
-					at sagittis sit amet, egestas et tellus. Pellentesque lacinia
-					facilisis massa quis semper.</p>
-			</div>
+		<h3 class="typo_w3_agile_head">风险评测</h3><br><br>
+		<div class="w3l_faq_grids" style="font-size: larger">
+			<table class="w31_tb_risk">
+				<div th:each="risk:${riskInfoList}">
+					<tr>
+						<!--<h4>1. Maecenas consequat libero eu eleifend placerat ?</h4>-->
+						<td th:text="${risk.riskId}+'.'+${risk.riskTopic}">
+							consequat libero eu eleifend placerat ?</td>
+					</tr>
+					<tr>
+						<td style="padding: 20px 0px">
+							<input type="checkbox" name="answer"/>是 &nbsp; &nbsp;<input type="checkbox" name="answer"/>否
+						</td>
+					</tr>
+				</div>
+			</table>
 		</div>
 	</div>
 </div>

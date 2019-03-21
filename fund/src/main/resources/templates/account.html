@@ -246,32 +246,30 @@
 													<td class="w3_agileits_head1 w3_agileits_head_w3"><b>身份证</b></td>
 													</tr>
 													<tr height="80px">
-														<td class="name_one">
+														<td class="name_one" th:text="${list.userNm}">
 															不知好歹臭小子
 														</td>
-														<td class="tel_one">
+														<td class="tel_one" th:text="${list.userTel}">
 															131644214687
 														</td>
-														<td class="idCard_one">
-															46151749719451758
-															
+														<td class="idCard_one" th:text="${list.userIdcard}">
 														</td>
 													</tr>
 												</table>
 												<h5>银行卡信息</h5>
-												<table class="w3_agile_all_trade w3_agile_all_trade_funds w3_table_trade">
+												<table class = "w3_agile_all_trade w3_agile_all_trade_funds w3_table_trade">
+													<th class="w3_agileits_head w3_agileits_head_w3"><b>已添加</b></th>
 													<tr height="80px">
-														<td class="w3_agileits_head w3_agileits_head_w3"><b>已添加</b></td>
 														<td></td>
 														<td></td>
-														
+
 													</tr>
 													<tr height="100px">
-														<td class="agileits_w3layouts_td">
+														<td class="agileits_w3layouts_td" th:text="${list.bankCard}">
 															135*******8909
 														</td>
 														<td class="agileits_w3layouts_td">
-															<button class="delete">删除</button>
+															<button class="delete"><a>删除</a></button>
 														</td>
 														<td class="agileits_w3layouts_td">
 															<button class="delete">新增</button>
@@ -286,13 +284,15 @@
 												<h5>您持有的产品</h5>
 												<table class="w3_agile_all_trade w3_agile_all_trade_funds w3_table_trade">
 													<tr height="50px">
+													<tr id="api_list4">
 														<th class="w3_agileits_head"><b>名称</b></th>
+														<td class="w3_agileits_head1"><b>基金代码</b></td>
 														<td class="w3_agileits_head1"><b>净值</b></td>
-														<td class="w3_agileits_head1"><b>最新净值</b></td>
+														<td class="w3_agileits_head1"><b>涨跌</b></td>
 														<td class="w3_agileits_head1"><b>日增长率</b></td>
-														<td class="w3_agileits_head1"><b>月增长率</b></td>
-														<td class="w3_agileits_head1"><b>年收益率</b></td>
-														<td class="w3_agileits_head1"><b>购买金额</b></td>
+														<td class="w3_agileits_head1"><b>购买时间</b></td>
+														<td class="w3_agileits_head1">实际申购金额</td>
+													</tr>
 													</tr>	
 													<tr>
 														<th class="w3_agile_th">
@@ -305,105 +305,7 @@
 														<td class="agileits_w3layouts_td">66132.83</td>
 														<td class="agileits_w3layouts_td">10000.00</td>
 														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
-														</th>
-													</tr>
-													<tr>
-														<th class="w3_agile_th">
-															<a href="details">RBL Bank</a>
-														</th>
-														<td class="agileits_w3layouts_td">305.50</td>
-														<td class="agileits_w3layouts_td">274.20</td>
-														<td class="agileits_w3layouts_td">225.20</td>
-														<td class="agileits_w3layouts_td">300.05</td>
-														<td class="agileits_w3layouts_td">66132.83</td>
-														<td class="agileits_w3layouts_td">10000.00</td>
-														<th class="w3_agile_th">
-															<a href="sell.html">卖出</a>
+															<button><a href="sell.html">赎回</a></button>
 														</th>
 													</tr>
 												</table>
@@ -415,12 +317,11 @@
 												<h5>您所收藏的产品</h5>
 												<table class="w3_agile_all_trade w3_agile_all_trade_funds w3_table_trade">
 													<tr height="50px">
+														<td class="w3_agileits_head1"><b>序号</b></td>
 														<th class="w3_agileits_head"><b>名称</b></th>
+														<td class="w3_agileits_head1"><b>基金代码</b></td>
 														<td class="w3_agileits_head1"><b>净值</b></td>
-														<td class="w3_agileits_head1"><b>最新净值</b></td>
-														<td class="w3_agileits_head1"><b>日增长率</b></td>
-														<td class="w3_agileits_head1"><b>月增长率</b></td>
-														<td class="w3_agileits_head1"><b>年收益率</b></td>
+														<td class="w3_agileits_head1"><b>涨跌</b></td>
 														<td class="w3_agileits_head1"></td>
 													</tr>	
 													<tr>

@@ -45,14 +45,11 @@
 									<a th:href="@{http://localhost:8100/web(name=adlogin)}" class="dropdown-toggle">管理员登陆</a><i>|</i>
 							</li>
 							<li class="w3layouts_header_list">
-								<a th:href="@{http://localhost:8100/web(name=index)}" data-toggle="modal" data-target="#myModal">注销</a><i>|</i>
-							</li>s
-							<li class="w3layouts_header_list">
-								<a>欢迎，<span th:text="${session.uname}"></span></a><i>|</i>
+								<a href="#" data-toggle="modal" data-target="#myModal">登陆注册</a><i>|</i>
 							</li>
 						<!--</div>-->
 						<li class="w3layouts_header_list">
-							<a th:href="@{http://localhost:8100/riskDetail}">测一测</a><i>|</i>
+							<a th:href="@{http://localhost:8100/web(name=risk)}">测一测</a><i>|</i>
 						</li>
 						<li class="w3layouts_header_list">
 							<a th:href="@{http://localhost:8100/web(name=contact)}">联系我们</a>
@@ -95,12 +92,12 @@
 							<li><a th:href="@{http://localhost:8100/web(name=equity)}">产品中心</a></li>
 							<li><a th:href="@{http://localhost:8100/web(name=new)}">新闻资讯</a></li>
 							<li><a th:href="@{http://localhost:8100/web(name=about)}">关于我们</a></li>
-							<li><a th:href="@{'http://localhost:8100/findUserInfo?userId='+${session.uid}}">我的账户</a></li>
+							<!--<li><a th:href="@{http://localhost:8100/web(name=account)}">我的账户</a></li>-->
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">服务中心<span class="caret"></span></a>
 								<div class="dropdown-menu w3ls_vegetables_menu">
 									<ul>
-										<li><a th:href="@{http://localhost:8100/riskDetail}">风险测评</a></li>
+										<li><a th:href="@{http://localhost:8100/web(name=risk)}">风险测评</a></li>
 										<li><a th:href="@{http://localhost:8100/web(name=managers)}">十大经理人</a></li>
 									</ul>
 								</div>
