@@ -13,9 +13,13 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderMapper orderMapper;
 
-
     @Override
     public ArrayList<Order> selectOrders() {
         return orderMapper.selectOrders();
+    }
+
+    @Override
+    public int insertOrder(String userNm, String userTel, String productNm, Double amount, Double actAmount, String buyTime) {
+        return orderMapper.insertOrder(userNm,userTel,productNm,amount,actAmount,buyTime);
     }
 }

@@ -220,10 +220,17 @@
 	</div>
 <!-- //banner-bottom -->
 <!-- products -->
+<form action="alipay_pay" method="post">
 	<div class="container">	
 		<div class="wrap">
 			<div class="product-left" style="float:left;margin-top:50px;">
 				<h3 class="product-title" style="font-size: x-large;color: red;">[[${plist[0].ProductNm}]]</h3>
+				<script type="text/javascript">
+					$().ready(function () {
+						$("#att_nm").attr("value","[[${plist[0].ProductNm}]]");
+                    })
+				</script>
+				<input style="display: none" name="productnm" id="att_nm"/>
 				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					<p class="active" style="font-size:20px ;">单位净值</p>
 					<p class="time"><span style="color: red;">2019-03-10</span></p>
@@ -279,7 +286,7 @@
 			</div>
 			<div class="buy-window" style="float:left;margin-left: 400px;margin-top: -100px;">
 				<div id="">				
-				    <input class="form-group" style="height: 35px;width: 250px;" placeholder="                 元"/><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+				    <input class="form-group" name="yuan" style="height: 35px;width: 250px;" placeholder="      元"/><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
 				     style="background-color: darkred;height: 37px;width: 160px;margin-top: -3px;text-align: center;">立即申购</button>
 			    </div>
 			    <div class="warnings">
@@ -303,11 +310,12 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">确定</button>
+        <button type="submit" class="btn btn-primary">确定</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 <!-- footer -->
 	<div class="footer">
 		<div class="container">

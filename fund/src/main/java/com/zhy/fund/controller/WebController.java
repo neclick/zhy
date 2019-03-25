@@ -48,6 +48,8 @@ public class WebController {
                 return "admin/order";
             case "index":
                 return "index";
+            case "alipay":
+                return "alipay";
             default:
                 return "index";
         }

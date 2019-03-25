@@ -9,7 +9,7 @@
     <result column="amount" property="amount" jdbcType="DOUBLE" />
     <result column="cost" property="cost" jdbcType="DOUBLE" />
     <result column="act_amount" property="actAmount" jdbcType="DOUBLE" />
-    <result column="buy_time" property="buyTime" jdbcType="DATE" />
+    <result column="buy_time" property="buyTime" jdbcType="VARCHAR" />
     <result column="sell_time" property="sellTime" jdbcType="DATE" />
     <result column="income" property="income" jdbcType="DOUBLE" />
   </resultMap>
@@ -34,7 +34,7 @@
       income)
     values (#{orderId,jdbcType=INTEGER}, #{userNm,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR}, 
       #{productNm,jdbcType=VARCHAR}, #{amount,jdbcType=DOUBLE}, #{cost,jdbcType=DOUBLE}, 
-      #{actAmount,jdbcType=DOUBLE}, #{buyTime,jdbcType=DATE}, #{sellTime,jdbcType=DATE}, 
+      #{actAmount,jdbcType=DOUBLE}, #{buyTime,jdbcType=VARCHAR}, #{sellTime,jdbcType=DATE},
       #{income,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.zhy.fund.entity.Order" >
@@ -94,7 +94,7 @@
         #{actAmount,jdbcType=DOUBLE},
       </if>
       <if test="buyTime != null" >
-        #{buyTime,jdbcType=DATE},
+        #{buyTime,jdbcType=VARCHAR},
       </if>
       <if test="sellTime != null" >
         #{sellTime,jdbcType=DATE},
@@ -126,7 +126,7 @@
         act_amount = #{actAmount,jdbcType=DOUBLE},
       </if>
       <if test="buyTime != null" >
-        buy_time = #{buyTime,jdbcType=DATE},
+        buy_time = #{buyTime,jdbcType=VARCHAR},
       </if>
       <if test="sellTime != null" >
         sell_time = #{sellTime,jdbcType=DATE},
@@ -145,15 +145,16 @@
       amount = #{amount,jdbcType=DOUBLE},
       cost = #{cost,jdbcType=DOUBLE},
       act_amount = #{actAmount,jdbcType=DOUBLE},
-      buy_time = #{buyTime,jdbcType=DATE},
+      buy_time = #{buyTime,jdbcType=VARCHAR},
       sell_time = #{sellTime,jdbcType=DATE},
       income = #{income,jdbcType=DOUBLE}
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
 
-  <select id="selectOrders" resultMap="BaseResultMap" parameterType="com.zhy.fund.entity.Order">
-    select
-    <include refid="Base_Column_List" />
-    from `order`
-  </select>
+  <insert id="insertOrder" parameterType="com.zhy.fund.entity.Order" >
+    insert into `order` (user_nm, user_tel,product_nm, amount,act_amount, buy_time)
+    values ( #{userNm,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR},
+      #{productNm,jdbcType=VARCHAR}, #{amount,jdbcType=DOUBLE},
+      #{actAmount,jdbcType=DOUBLE}, #{buyTime,jdbcType=VARCHAR})
+  </insert>
 </mapper>
