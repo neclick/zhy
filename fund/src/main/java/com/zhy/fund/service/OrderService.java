@@ -2,6 +2,7 @@ package com.zhy.fund.service;
 
 import com.zhy.fund.entity.Product;
 
+import java.util.Date;
 import java.util.List;
 
 public interface OrderService {
@@ -17,4 +18,6 @@ public interface OrderService {
      * @return
      */
     Product getProductById(String productId);
+
+    int insertOrder(String userNm, String userTel, String productNm,Double amount,Double actAmount, String buyTime);
 }

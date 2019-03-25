@@ -5,14 +5,22 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.zhy.fund.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -49,20 +57,26 @@ public class alipay{
         // 仅支持JSON
         public static String format = "JSON";
 
-
+        @Autowired
+        OrderService orderService;
 
     //@ApiOperation(value = "发起支付", notes = "支付宝")
     @RequestMapping(value = "alipay_pay", method = RequestMethod.POST)
-    public void pay(HttpServletRequest httpRequest, HttpServletResponse httpResponse)
+    public void pay(HttpServletRequest httpRequest,HttpSession session,HttpServletResponse httpResponse,@RequestParam("yuan") String yuan,@RequestParam("productnm") String productnm)
             throws ServletException, IOException {
+        int yuan1=Integer.parseInt(yuan);
+        System.out.println(yuan);
+        System.out.println(productnm);
+        session.setAttribute("productnm",productnm);
         AlipayClient alipayClient = new DefaultAlipayClient(gatewayUrl, app_id, merchant_private_key, format, charset,
                 alipay_public_key, sign_type); // 获得初始化的AlipayClient
         AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();// 创建API对应的request
         alipayRequest.setReturnUrl(return_url);
         alipayRequest.setNotifyUrl(notify_url);// 在公共参数中设置回跳和通知地址
+        //(int)(Math.random()*10)+0.88
         alipayRequest.setBizContent("{" + "    \"out_trade_no\":\"2015032001010100"+(int)(Math.random()*1000)+"\","
-                + "    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," + "    \"total_amount\":"+(int)(Math.random()*10)+0.88+","
-                + "    \"subject\":\"Iphone6 16G\"," + "    \"body\":\"Iphone6 16G 耐克金\","
+                + "    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," + "    \"total_amount\":"+yuan1*1.0012+","
+                + "    \"subject\":\""+productnm+"\"," + "    \"body\":\"Iphone6 16G 耐克金\","
                 + "    \"passback_params\":\"merchantBizType%3d3C%26merchantBizNo%3d2016010101111\","
                 + "    \"extend_params\":{" + "    \"sys_service_provider_id\":\"2088511833207846\"" + "    }" + "  }");// 填充业务参数
         String form = "";
@@ -79,7 +93,7 @@ public class alipay{
 
     //@ApiOperation(value = "支付同步回调", notes = "支付宝")
     @RequestMapping(value = "/returnUrl", method = RequestMethod.GET)
-    public String returnUrl(HttpServletRequest request, HttpServletResponse response)
+    public String returnUrl(HttpServletRequest request, HttpServletResponse response,HttpSession session)
             throws IOException, AlipayApiException {
         System.out.println("=================================同步回调=====================================");
 
@@ -112,10 +126,20 @@ public class alipay{
             // 付款金额
             String total_amount = new String(request.getParameter("total_amount").getBytes("ISO-8859-1"), "UTF-8");
 
+            String productnm= (String) session.getAttribute("productnm");
+
+            String uname= (String) session.getAttribute("uname");
+            String usertel= (String) session.getAttribute("usertel");
+            Double yuan3=Double.parseDouble(total_amount);
+            Double yuan2=Double.parseDouble(total_amount)/1.0012;
             System.out.println("商户订单号="+out_trade_no);
             System.out.println("支付宝交易号="+trade_no);
             System.out.println("付款金额="+total_amount);
 
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss ");
+            String date=sdf.format(d);
+             orderService.insertOrder(uname,usertel,productnm,yuan2,yuan3,date);
             //response.getWriter().write("trade_no:" + trade_no + "<br/>out_trade_no:" + out_trade_no + "<br/>total_amount:" + total_amount);
             //return "admin/index";
         } else {
@@ -123,7 +147,7 @@ public class alipay{
         }
 //        response.getWriter().flush();
 //        response.getWriter().close();
-        return "admin/index";
+        return "index";
     }
 
     //@ApiOperation(value = "支付异步回调", notes = "支付宝")

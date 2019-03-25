@@ -1,6 +1,9 @@
 package com.zhy.fund.dao;
 
 import com.zhy.fund.entity.Order;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Date;
 
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer orderId);
@@ -15,6 +18,5 @@ public interface OrderMapper {
 
     int updateByPrimaryKey(Order record);
 
-    Order findByOrderId(String id);
-
+    int insertOrder(@Param("userNm") String userNm,@Param("userTel") String userTel,@Param("productNm") String productNm,@Param("amount") Double amount,@Param("actAmount") Double actAmount,@Param("buyTime") String buyTime);
 }

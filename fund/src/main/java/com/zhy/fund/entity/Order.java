@@ -1,5 +1,7 @@
 package com.zhy.fund.entity;
 
+import java.util.Date;
+
 public class Order {
     private Integer orderId;
 
@@ -14,6 +16,12 @@ public class Order {
     private Double cost;
 
     private Double actAmount;
+
+    private String buyTime;
+
+    private Date sellTime;
+
+    private Double income;
 
     public Integer getOrderId() {
         return orderId;
@@ -70,4 +78,29 @@ public class Order {
     public void setActAmount(Double actAmount) {
         this.actAmount = actAmount;
     }
+
+    public String getBuyTime() {
+        return buyTime;
+    }
+
+    public void setBuyTime(String buyTime) {
+        this.buyTime = buyTime;
+    }
+
+    public Date getSellTime() {
+        return sellTime;
+    }
+
+    public void setSellTime(Date sellTime) {
+        this.sellTime = sellTime;
+    }
+
+    public Double getIncome() {
+        return income;
+    }
+
+    public void setIncome(Double income) {
+        this.income = income;
+    }
+
 }

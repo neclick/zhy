@@ -16,7 +16,7 @@ public class JiJinUtil {
     public static String userAgent =  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36";
 
     //配置您申请的KEY
-    public static final String APPKEY ="cea8a3f441c798c058ac607352e66fec";
+    public static final String APPKEY ="0c401abd27f194768fdaadd4056c278e";
 
     //1.全部开放基金
     public static Object getRequest1(){

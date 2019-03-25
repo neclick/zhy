@@ -9,9 +9,13 @@
     <result column="amount" property="amount" jdbcType="DOUBLE" />
     <result column="cost" property="cost" jdbcType="DOUBLE" />
     <result column="act_amount" property="actAmount" jdbcType="DOUBLE" />
+    <result column="buy_time" property="buyTime" jdbcType="VARCHAR" />
+    <result column="sell_time" property="sellTime" jdbcType="DATE" />
+    <result column="income" property="income" jdbcType="DOUBLE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    order_id, user_nm, user_tel, product_nm, amount, cost, act_amount
+    order_id, user_nm, user_tel, product_nm, amount, cost, act_amount, buy_time, sell_time, 
+    income
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -26,10 +30,12 @@
   <insert id="insert" parameterType="com.zhy.fund.entity.Order" >
     insert into order (order_id, user_nm, user_tel, 
       product_nm, amount, cost, 
-      act_amount)
+      act_amount, buy_time, sell_time, 
+      income)
     values (#{orderId,jdbcType=INTEGER}, #{userNm,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR}, 
       #{productNm,jdbcType=VARCHAR}, #{amount,jdbcType=DOUBLE}, #{cost,jdbcType=DOUBLE}, 
-      #{actAmount,jdbcType=DOUBLE})
+      #{actAmount,jdbcType=DOUBLE}, #{buyTime,jdbcType=VARCHAR}, #{sellTime,jdbcType=DATE},
+      #{income,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.zhy.fund.entity.Order" >
     insert into order
@@ -55,6 +61,15 @@
       <if test="actAmount != null" >
         act_amount,
       </if>
+      <if test="buyTime != null" >
+        buy_time,
+      </if>
+      <if test="sellTime != null" >
+        sell_time,
+      </if>
+      <if test="income != null" >
+        income,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
@@ -77,6 +92,15 @@
       </if>
       <if test="actAmount != null" >
         #{actAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="buyTime != null" >
+        #{buyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sellTime != null" >
+        #{sellTime,jdbcType=DATE},
+      </if>
+      <if test="income != null" >
+        #{income,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
@@ -101,6 +125,15 @@
       <if test="actAmount != null" >
         act_amount = #{actAmount,jdbcType=DOUBLE},
       </if>
+      <if test="buyTime != null" >
+        buy_time = #{buyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sellTime != null" >
+        sell_time = #{sellTime,jdbcType=DATE},
+      </if>
+      <if test="income != null" >
+        income = #{income,jdbcType=DOUBLE},
+      </if>
     </set>
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
@@ -111,7 +144,17 @@
       product_nm = #{productNm,jdbcType=VARCHAR},
       amount = #{amount,jdbcType=DOUBLE},
       cost = #{cost,jdbcType=DOUBLE},
-      act_amount = #{actAmount,jdbcType=DOUBLE}
+      act_amount = #{actAmount,jdbcType=DOUBLE},
+      buy_time = #{buyTime,jdbcType=VARCHAR},
+      sell_time = #{sellTime,jdbcType=DATE},
+      income = #{income,jdbcType=DOUBLE}
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
+
+  <insert id="insertOrder" parameterType="com.zhy.fund.entity.Order" >
+    insert into `order` (user_nm, user_tel,product_nm, amount,act_amount, buy_time)
+    values ( #{userNm,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR},
+      #{productNm,jdbcType=VARCHAR}, #{amount,jdbcType=DOUBLE},
+      #{actAmount,jdbcType=DOUBLE}, #{buyTime,jdbcType=VARCHAR})
+  </insert>
 </mapper>

@@ -30,6 +30,8 @@ public class UserController {
             User users=userService.selectByNo(userNo);
             String uname=users.getUserNm();
             Integer uid=users.getUserId();
+            String usertel=users.getUserTel();
+
             HttpSession session=request.getSession();
             session.setAttribute("uid",uid);
             session.setAttribute("uname",uname);
