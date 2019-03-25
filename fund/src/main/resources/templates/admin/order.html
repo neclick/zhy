@@ -158,11 +158,12 @@
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
+                                    <th>订单编号</th>
                                     <th>客户姓名</th>
                                     <th>电话</th>
                                     <th>基金名称</th>
-                                    <th>金额</th>
-                                    <th>费用</th>
+                                    <th>付款金额</th>
+                                    <th>持有金额</th>
                                     <th>时间</th>
                                 </tr>
                                 </thead>
@@ -171,17 +172,19 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
                                     <td>(单位：元)</td>
                                     <td>(单位：元)</td>
                                     <td>(单位：)</td>
                                 </tr>
-                                <tr>
-                                    <td>小小瞄小狗</td>
-                                    <td>13348907863</td>
-                                    <td>王者荣耀</td>
-                                    <td>10000</td>
-                                    <td>12</td>
-                                    <td>2019-3-12</td>
+                                <tr th:each="order:${orderList}">
+                                    <td th:text="${order.orderId}">2019030211</td>
+                                    <td th:text="${order.userNm}">小小瞄小狗</td>
+                                    <td th:text="${order.userTel}">13348907863</td>
+                                    <td th:text="${order.productNm}">王者荣耀</td>
+                                    <td th:text="${order.actAmount}">100012</td>
+                                    <td th:text="${order.amount}">100000</td>
+                                    <td th:text="${order.buyTime}">2019-3-12</td>
                                 </tr>
                                 </tbody>
                             </table>

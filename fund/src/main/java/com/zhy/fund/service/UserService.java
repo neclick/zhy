@@ -16,4 +16,5 @@ public interface UserService {
 
     User selectByNo(String userNo);
 
+    int insertRiskType(String riskType);
 }

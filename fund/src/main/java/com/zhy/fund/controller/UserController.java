@@ -63,4 +63,13 @@ public class UserController {
         return "account";
     }
 
+    @RequestMapping("insertRiskType")
+    public String insertRiskType(@RequestParam("userId") String userId, @RequestParam("riskType") String riskType){
+        if(userService.insertRiskType(riskType)>0){
+            return "index";
+        }else{
+            return "index";
+        }
+    }
+
 }

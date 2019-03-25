@@ -2,6 +2,9 @@ package com.zhy.fund.dao;
 
 import com.zhy.fund.entity.Order;
 
+import java.util.ArrayList;
+
+
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer orderId);
 
@@ -15,6 +18,5 @@ public interface OrderMapper {
 
     int updateByPrimaryKey(Order record);
 
-    Order findByOrderId(String id);
-
+    ArrayList<Order> selectOrders();
 }

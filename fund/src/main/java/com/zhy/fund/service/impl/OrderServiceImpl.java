@@ -1,19 +1,21 @@
 package com.zhy.fund.service.impl;
 
-import com.zhy.fund.entity.Product;
+import com.zhy.fund.dao.OrderMapper;
+import com.zhy.fund.entity.Order;
 import com.zhy.fund.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.ArrayList;
 
+@Service
 public class OrderServiceImpl implements OrderService {
+    @Autowired
+    OrderMapper orderMapper;
+
 
     @Override
-    public List<Product> getProducts() {
-        return null;
-    }
-
-    @Override
-    public Product getProductById(String productId) {
-        return null;
+    public ArrayList<Order> selectOrders() {
+        return orderMapper.selectOrders();
     }
 }

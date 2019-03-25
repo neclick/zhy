@@ -27,4 +27,6 @@ public interface UserMapper {
     ArrayList<User> findAllUserInfo();
 
     User findUserInfo(@Param("userId") Integer userId);
+
+    int insertRiskType(String riskType);
 }

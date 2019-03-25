@@ -915,22 +915,6 @@
 		</div>
 	</div>
 <!-- //follow-us -->
-<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<ul class="agileits_w3layouts_footer_info">
-				<li><a href="index.html">Home</a><i>|</i></li>
-				<li><a href="news.html">Markets</a><i>|</i></li>
-				<li><a href="funds.html">mutual funds</a><i>|</i></li>
-				<li><a href="new.html">commodities</a><i>|</i></li>
-				<li><a href="portfolio.html">portfolio</a><i>|</i></li>
-				<li><a href="about.html">About Us</a><i>|</i></li>
-				<li><a href="ipo.html">IPO</a><i>|</i></li>
-				<li><a href="sitemap.html">sitemap</a></li>
-			</ul>
-			<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-		</div>
-	</div>
 <!--add-->
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -940,16 +924,18 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myLogin">登陆</h4>
       </div>
-      <form action="userLogin" method="post" >
+      <form action="userLogin" method="post" name="login">
 	      <div class="modal-body">
 			  <div class="form-group">
 			    <label for="uuu">账号</label>
-			    <input type="text" class="form-control" id="uuu" name="userNo" placeholder="请输入账号">
+			    <input type="text" class="form-control" id="uuu" name="userNo" placeholder="请输入账号" onblur="checkUserNo()">
 			  </div>
+			  <a><span class="fade" id="userNoError"></span></a>
 			  <div class="form-group">
 			    <label for="yyy">密码</label>
-			    <input type="password" class="form-control" id="yyy" name="userPass" placeholder="请输入密码">
+			    <input type="password" class="form-control" id="yyy" name="userPass" placeholder="请输入密码" onblur="checkpwd()">
 			  </div>
+			  <a><span class="fade" id="pwdError"></span></a>
 			  <!-- <div class="form-group">
 			    <label for="exampleInputFile">File input</label>
 			    <input type="file" id="exampleInputFile">
@@ -965,7 +951,7 @@
 	      <div class="modal-footer">
 	      	<p id="mismodal2" class="text-left"  data-dismiss="modal" data-toggle="modal" data-target="#myModal2"><a href="#">没有账号？去注册》》</a></p>
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-primary">登陆</button>
+	        <button type="button" id="loginbt" class="btn btn-primary">登陆</button>
 	      </div>
       </form>
     </div>
@@ -1037,9 +1023,19 @@
     </div>
   </div>
 </div>
-
-<!-- //footer -->
 <!-- script for marque -->
+<script type="text/javascript">
+    //账号验证
+    $("#loginbt").click(function () {
+        var uuu=$("#uuu").val();
+        var yyy=$("#yyy").val();
+		if(uuu==null || yyy==null ||uuu=='' || yyy==''){
+		    alert("请输入正确的账号密码");
+		}else{
+			$("form[name='login']").submit();
+		}
+    });
+</script>
 	<script>
 	  $('.marquee').marquee({
 		gap: 100,

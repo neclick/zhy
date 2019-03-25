@@ -41,6 +41,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectByNo(userNo);
     }
 
+    @Override
+    public int insertRiskType(String riskType) {
+        return 0;
+    }
 
 
 }
