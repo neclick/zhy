@@ -1,6 +1,9 @@
 package com.zhy.fund.entity;
 
+import java.util.Date;
+
 public class Order {
+
     private Integer orderId;
 
     private String userNm;
@@ -34,7 +37,7 @@ public class Order {
     }
 
     public void setUserNm(String userNm) {
-        this.userNm = userNm == null ? null : userNm.trim();
+        this.userNm = userNm;
     }
 
     public String getUserTel() {
@@ -42,7 +45,7 @@ public class Order {
     }
 
     public void setUserTel(String userTel) {
-        this.userTel = userTel == null ? null : userTel.trim();
+        this.userTel = userTel;
     }
 
     public String getProductNm() {
@@ -50,7 +53,7 @@ public class Order {
     }
 
     public void setProductNm(String productNm) {
-        this.productNm = productNm == null ? null : productNm.trim();
+        this.productNm = productNm;
     }
 
     public Double getAmount() {
@@ -76,4 +79,31 @@ public class Order {
     public void setActAmount(Double actAmount) {
         this.actAmount = actAmount;
     }
+
+    public String getBuyTime() {
+        return buyTime;
+    }
+
+    public void setBuyTime(String buyTime) {
+        this.buyTime = buyTime;
+    }
+
+    public Date getSellTime() {
+        return sellTime;
+    }
+
+    public void setSellTime(Date sellTime) {
+        this.sellTime = sellTime;
+    }
+
+    public Double getIncome() {
+        return income;
+    }
+
+    public void setIncome(Double income) {
+        this.income = income;
+    }
+
+
+
 }

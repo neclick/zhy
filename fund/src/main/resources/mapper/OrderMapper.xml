@@ -157,4 +157,12 @@
       #{productNm,jdbcType=VARCHAR}, #{amount,jdbcType=DOUBLE},
       #{actAmount,jdbcType=DOUBLE}, #{buyTime,jdbcType=VARCHAR})
   </insert>
+
+  <select id="selectOrders" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from `order`
+  </select>
+
+
 </mapper>

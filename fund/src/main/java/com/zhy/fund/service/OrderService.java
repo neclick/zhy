@@ -1,23 +1,13 @@
 package com.zhy.fund.service;
 
-import com.zhy.fund.entity.Product;
+import com.zhy.fund.entity.Order;
 
-import java.util.Date;
-import java.util.List;
+
+import java.util.ArrayList;
+
 
 public interface OrderService {
-    /**
-     * 获取所有产品列表
-     * @return
-     */
-    List<Product> getProducts();
 
-    /**
-     * 根据产品ID查询产品详情
-     * @param productId
-     * @return
-     */
-    Product getProductById(String productId);
-
+    ArrayList<Order> selectOrders();
     int insertOrder(String userNm, String userTel, String productNm,Double amount,Double actAmount, String buyTime);
 }
