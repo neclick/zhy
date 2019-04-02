@@ -48,8 +48,7 @@
 </head>
 	
 <body>
-<div th:include="common01 :: common-header"></div>
-<!-- banner -->
+<div th:include="common01 :: common-header01"></div><!-- banner -->
 	<div class="banner">
 			<section class="slider">
 				<div class="flexslider">
@@ -1166,6 +1165,13 @@
 </div>
 <!-- script for marque -->
 <script type="text/javascript">
+/*	$().ready(function () {
+		if([[${session.users}]]!=null){
+			$('body').prepend("<div th:include='common :: common-header01'></div>");
+		}else{
+            $('body').prepend("<div th:include='common01 :: common-header01'></div>");
+		}
+    })*/
     //账号验证
     $("#loginbt").click(function () {
         var uuu=$("#uuu").val();
@@ -1349,7 +1355,10 @@ $(document).ready(function(){
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$().UItoTop({ easingType: 'easeOutQuart' });
-								
+					//request   msg
+					/*if([[${session.msg}]]==null){
+					    alert("请登录！！1");
+					}*/
 			})
 	</script>
 <!-- //here ends scrolling icon -->
@@ -1437,6 +1446,18 @@ $(document).ready(function(){
             }
         })
     });
+</script>
+<script type="text/javascript">
+	    $("#nav_product,#nav_news").click(function () {
+            $.ajax({
+                type: 'get',
+                url: 'isinit',
+                success: function (result){
+                    alert(result);
+                }
+            })
+        })
+
 </script>
 </body>
 </html>

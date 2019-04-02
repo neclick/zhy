@@ -26,11 +26,11 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
-        if (session.getAttribute("admin") != null) {
+        if (session.getAttribute("users") != null) {
             return true;
         } else {
             request.setAttribute("msg", "请先登录系统！");
-            request.getRequestDispatcher("login.html").forward(request, response);
+            request.getRequestDispatcher("index.html").forward(request, response);
             return false;
         }
 

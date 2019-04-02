@@ -28,13 +28,14 @@ public class UserController {
         if(userService.userLogin(userNo, userPass)!=null){
             /*map.put("userno",userNo);*/
             User users=userService.selectByNo(userNo);
-            String uname=users.getUserNm();
+/*            String uname=users.getUserNm();
             Integer uid=users.getUserId();
-            String usertel=users.getUserTel();
+            String usertel=users.getUserTel();*/
 
             HttpSession session=request.getSession();
-            session.setAttribute("uid",uid);
-            session.setAttribute("uname",uname);
+/*            session.setAttribute("uid",uid);
+            session.setAttribute("uname",uname);*/
+            session.setAttribute("users",users);
             return "index2";
         }else{
             return "index";

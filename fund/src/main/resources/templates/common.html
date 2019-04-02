@@ -45,10 +45,10 @@
 									<a th:href="@{http://localhost:8100/web(name=adlogin)}" class="dropdown-toggle">管理员登陆</a><i>|</i>
 							</li>
 							<li class="w3layouts_header_list">
-								<a th:href="@{http://localhost:8100/web(name=index)}">注销</a><i>|</i>
-							</li>s
+								<a th:href="@{http://localhost:8100/web(name=zhuxiao)}">注销</a><i>|</i>
+							</li>
 							<li class="w3layouts_header_list">
-								<a>欢迎，<span th:text="${session.uname}"></span></a><i>|</i>
+								<a>欢迎，<span th:text="${session.users.UserNm}"></span></a><i>|</i>
 							</li>
 						<!--</div>-->
 						<li class="w3layouts_header_list">
@@ -95,7 +95,7 @@
 							<li><a th:href="@{http://localhost:8100/web(name=equity)}">产品中心</a></li>
 							<li><a th:href="@{http://localhost:8100/web(name=new)}">新闻资讯</a></li>
 							<li><a th:href="@{http://localhost:8100/web(name=about)}">关于我们</a></li>
-							<li><a th:href="@{'http://localhost:8100/findUserInfo?userId='+${session.uid}}">我的账户</a></li>
+							<li><a th:href="@{'http://localhost:8100/findUserInfo?userId='+${session.users.UserId}}">我的账户</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">服务中心<span class="caret"></span></a>
 								<div class="dropdown-menu w3ls_vegetables_menu">
