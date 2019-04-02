@@ -49,7 +49,12 @@ public class WebController {
                    return "index";
                 }
             case "service":
-                return "service";
+                if (session.getAttribute("users")!=null) {
+                    return "service";
+                }else {
+                    request.setAttribute("msg", "请先登录系统！");
+                    return "index";
+                }
             case "adlogin":
                 return "admin/page-login";
             case "ch-flot":
@@ -68,6 +73,8 @@ public class WebController {
                 return "admin/order";
             case "index":
                 return "index";
+            case "index2":
+                return "index2";
             case "alipay":
                 return "alipay";
             case "zhuxiao":

@@ -1058,110 +1058,110 @@
 <!--add-->
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myLogin">登陆</h4>
-      </div>
-      <form action="userLogin" method="post" name="login">
-	      <div class="modal-body">
-			  <div class="form-group">
-			    <label for="uuu">账号</label>
-			    <input type="text" class="form-control" id="uuu" name="userNo" placeholder="请输入账号" onblur="checkUserNo()">
-			  </div>
-			  <a><span class="fade" id="userNoError"></span></a>
-			  <div class="form-group">
-			    <label for="yyy">密码</label>
-			    <input type="password" class="form-control" id="yyy" name="userPass" placeholder="请输入密码" onblur="checkpwd()">
-			  </div>
-			  <a><span class="fade" id="pwdError"></span></a>
-			  <!-- <div class="form-group">
-			    <label for="exampleInputFile">File input</label>
-			    <input type="file" id="exampleInputFile">
-			    <p class="help-block">Example block-level help text here.</p>
-			  </div>
-			  <div class="checkbox">
-			    <label>
-			      <input type="checkbox"> Check me out
-			    </label>
-			  </div>
-			  <button type="submit" class="btn btn-default">Submit</button> -->
-	      </div>
-	      <div class="modal-footer">
-	      	<p id="mismodal2" class="text-left"  data-dismiss="modal" data-toggle="modal" data-target="#myModal2"><a href="#">没有账号？去注册》》</a></p>
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" id="loginbt" class="btn btn-primary">登陆</button>
-	      </div>
-      </form>
-    </div>
-  </div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myLogin">登陆</h4>
+			</div>
+			<form action="userLogin" method="post" name="login">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="uuu">账号</label>
+						<input type="text" class="form-control" id="uuu" name="userNo" placeholder="请输入账号" onblur="checkUserNo()">
+					</div>
+					<a><span class="fade" id="userNoError"></span></a>
+					<div class="form-group">
+						<label for="yyy">密码</label>
+						<input type="password" class="form-control" id="yyy" name="userPass" placeholder="请输入密码" onblur="checkpwd()">
+					</div>
+					<a><span class="fade" id="pwdError"></span></a>
+					<!-- <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <input type="file" id="exampleInputFile">
+                      <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Check me out
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button> -->
+				</div>
+				<div class="modal-footer">
+					<p id="mismodal2" class="text-left"  data-dismiss="modal" data-toggle="modal" data-target="#myModal2"><a href="#">没有账号？去注册》》</a></p>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" id="loginbt" class="btn btn-primary">登陆</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 
 <!-- Modal2 -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myRegister">注册</h4>
-      </div>
-      <form action="register" method="post">
-	      <div class="modal-body">
-              <style>.form-group{margin-bottom:5px;}</style>
-			  <div class="form-group">
-			    <label>账号</label>
-			    <input type="text" class="form-control" name="userNo"  placeholder="请输入账号">
-			  </div>
-			  <div class="form-group">
-				  <label>姓名</label>
-				  <input type="text" class="form-control" name="userNm"  placeholder="请输入您的真实姓名">
-			  </div>
-			  <div class="form-group">
-				  <label>身份证号</label>
-				  <input type="text" class="form-control" name="userIdcard" placeholder="请输入二代身份证号">
-			  </div>
-			  <div class="form-group">
-			    <label for="bbb">密码</label>
-			    <input type="password" class="form-control" id="bbb" name="userPass" placeholder="请输入密码">
-			  </div>
-			  <div class="form-group">
-			    <label for="ccc">确认密码</label>
-			    <input type="password" class="form-control" id="ccc" name="userPass-config" placeholder="确定密码">
-			  </div>
-			  <div class="form-group">
-			    <label for="ggg">手机号</label>
-			    <div style="clear: both"><input type="text" class="form-control logincs1" id="ggg" name="userTel" style="float: left;" placeholder="手机号码">
-                  <a class="btn btn-default" href="#" role="button" id="sendyz" style="float: left">发送验证码</a></div>
-				  <span class="sendspan" style="display: none;">已发送，<strong id="messecond"></strong>秒内有效</span>
-			    <style type="text/css">.logincs1{width:50%;}</style>
-			    <script type="text/javascript">
-			    	$("#sendyz").click(function(){
-			    		$(".sendspan").css('display','inline-block');
-			    		var a=0;
-			    		setInterval(function(){
-			    			var b=120;
-			    			if(b>0) {
-                                $("#messecond").html(b - a);
-                            }
-			    			a++;
-			    		},1000);
-			    	});
-			    </script>
-			  </div>
-			  <div class="form-group" style="clear: both">
-			    <label for="exampleInputPassword1">验证码</label>
-			    <input type="text" class="form-control logincs2" id="exampleInputPassword1" placeholder="验证码">
-			    <style type="text/css">.logincs2{width:30%;}</style>
-			  </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-primary">注册</button>
-	      </div>
-      </form>
-    </div>
-  </div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myRegister">注册</h4>
+			</div>
+			<form action="register" method="post">
+				<div class="modal-body">
+					<style>.form-group{margin-bottom:5px;}</style>
+					<div class="form-group">
+						<label>账号</label>
+						<input type="text" class="form-control" name="userNo"  placeholder="请输入账号">
+					</div>
+					<div class="form-group">
+						<label>姓名</label>
+						<input type="text" class="form-control" name="userNm"  placeholder="请输入您的真实姓名">
+					</div>
+					<div class="form-group">
+						<label>身份证号</label>
+						<input type="text" class="form-control" name="userIdcard" placeholder="请输入二代身份证号">
+					</div>
+					<div class="form-group">
+						<label for="bbb">密码</label>
+						<input type="password" class="form-control" id="bbb" name="userPass" placeholder="请输入密码">
+					</div>
+					<div class="form-group">
+						<label for="ccc">确认密码</label>
+						<input type="password" class="form-control" id="ccc" name="userPass-config" placeholder="确定密码">
+					</div>
+					<div class="form-group">
+						<label for="ggg">手机号</label>
+						<div style="clear: both"><input type="text" class="form-control logincs1" id="ggg" name="userTel" style="float: left;" placeholder="手机号码">
+							<a class="btn btn-default" href="#" role="button" id="sendyz" style="float: left">发送验证码</a></div>
+						<span class="sendspan" style="display: none;">已发送，<strong id="messecond"></strong>秒内有效</span>
+						<style type="text/css">.logincs1{width:50%;}</style>
+						<script type="text/javascript">
+                            $("#sendyz").click(function(){
+                                $(".sendspan").css('display','inline-block');
+                                var a=0;
+                                setInterval(function(){
+                                    var b=120;
+                                    if(b>0) {
+                                        $("#messecond").html(b - a);
+                                    }
+                                    a++;
+                                },1000);
+                            });
+						</script>
+					</div>
+					<div class="form-group" style="clear: both">
+						<label for="exampleInputPassword1">验证码</label>
+						<input type="text" class="form-control logincs2" id="exampleInputPassword1" placeholder="验证码">
+						<style type="text/css">.logincs2{width:30%;}</style>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">注册</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 <!-- script for marque -->
 <script type="text/javascript">
@@ -1413,6 +1413,7 @@ $(document).ready(function(){
             error:function(XmlHttpRequest,textStatus,errorThrown){
                 console.log(data.error_code);
             }
+
         })
     })
 
@@ -1448,7 +1449,7 @@ $(document).ready(function(){
     });
 </script>
 <script type="text/javascript">
-	    $("#nav_product,#nav_news").click(function () {
+	    $("#nav_product,#nav_account").click(function () {
             $.ajax({
                 type: 'get',
                 url: 'isinit',
